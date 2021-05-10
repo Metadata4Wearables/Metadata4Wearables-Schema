@@ -10,7 +10,7 @@
           "description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
           "type": "string",
           "pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
-        }
+        },
         "email": { "type": "string", "format": "idn-email" },
         "orcid": {
           "description": "ORCID identifier",
@@ -39,8 +39,9 @@
       "type": "object",
       "properties": {
         "name": { "type": "string" },
-        "contact_email" : { "type": "string", "format": "idn-email" },
+        "contact_email" : { "type": "string", "format": "idn-email" }
       }
+    },
     "studyid": {
       "description": "Study identifier.",
       "example": "ACHM2019",
@@ -108,29 +109,29 @@
       "description": "Description of the sample group(s).",
       "example": "ACHM patients",
       "type": "object",
-        "properties": {
-          "name": {
+      "properties": {
+        "name": {
             "description": "Name of group.",
             "example": "ACHM patients",
             "type": "string"
           },
-          "description": {
+        "description": {
             "description": "Description of sample group.",
             "example": "",
             "type": "string"
           },
-          "label": {
+        "label": {
             "description": "Label of sample group.",
             "example": 0,
             "type": "integer"
           },
-          "group_size": {
+        "group_size": {
             "description": "Group size.",
             "example": 6,
             "type": "integer",
             "minimum": 1
           },
-          "inclusion_criteria": {
+        "inclusion_criteria": {
             "description": "Inclusion criteria for sample group.",
             "example": "",
             "type": "array",
@@ -138,9 +139,8 @@
             "items": {
               "type": "string"
             }
-      },
           },
-          "exclusion_criteria": {
+        "exclusion_criteria": {
             "description": "Exclusion criteria for sample group.",
             "example": "",
             "type": "array",
@@ -149,6 +149,7 @@
               "type": "string"
             }
           }
+      }
     },
     "intervention": {
       "description": "Short description of the study intervention, if any.",
@@ -213,7 +214,7 @@
               }
             }
           }
-        },
+        }
       },
       "required": ["period", "contributors"]
     }
