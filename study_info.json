@@ -90,8 +90,45 @@
     },
     "sample": {
       "description": "Short description of the study sample.",
-      "example": "ACHM patients",
+      "example": "Healthy control participants and ACHM patients",
       "type": "string"
+    },
+    "sample_groups": {
+      "description": "Description of the sample group(s).",
+      "example": "ACHM patients",
+      "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of group.",
+            "example": "ACHM patients",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of sample group.",
+            "example": "",
+            "type": "string"
+          },
+          "label": {
+            "description": "Label of sample group.",
+            "example": 0,
+            "type": "integer"
+          },
+          "group_size": {
+            "description": "Group size.",
+            "example": 6,
+            "type": "integer",
+            "minimum": 1
+          },
+          "inclusion_criteria": {
+            "description": "Inclusion criteria for sample group.",
+            "example": "",
+            "type": "string"
+          },
+          "exclusion_criteria": {
+            "description": "Exclusion criteria for sample group.",
+            "example": "",
+            "type": "string"
+          }
     },
     "intervention": {
       "description": "Short description of the study intervention, if any.",
@@ -114,7 +151,7 @@
         "verbatim_instruction": {
           "description": "Verbatim instructions given to participant.",
           "example": "",
-          "type": "string",
+          "type": "string"
         },
         "wear_time": {
           "description": "Number of days the participants were instructed to wear the actigraph. Fractional values are allowed.",
