@@ -25,7 +25,7 @@
             "city":           { "type": "string" },
             "country":        { "type": "string" }
           },
-          "required": ["name", "street_address", "city", "country"]
+          "required": ["name", "country"]
         }
       },
       "required": ["name", "role", "institution"]
