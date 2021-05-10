@@ -122,12 +122,21 @@
           "inclusion_criteria": {
             "description": "Inclusion criteria for sample group.",
             "example": "",
-            "type": "string"
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "string"
+            }
+      },
           },
           "exclusion_criteria": {
             "description": "Exclusion criteria for sample group.",
             "example": "",
-            "type": "string"
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "type": "string"
+            }
           }
     },
     "intervention": {
