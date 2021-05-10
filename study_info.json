@@ -31,24 +31,74 @@
       "required": ["name", "role", "institution"]
     }
   },
-  "title": "Study info",
-  "description": "Informations about the study",
+  "title": "Study information",
+  "description": "Information about the study",
   "type": "object",
   "properties": {
-    "acronym": {
-      "description": "Study acronym",
+    "studyid": {
+      "description": "Study identifier.",
+      "example": "ACHM2019",
       "type": "string"
     },
     "uuid": {
-      "description": "MD5 Hash made of the acronym, the PI family name and the start time of the data collection",
+      "description": "MD5 hash generated from the `studyid` (Study identifier) field.",
+      "example": "01d429fd3c4cc02697eea7f3fe838c54",
+      "type": "string"
+    },
+    "doi": {
+      "description": "DOI (Digital Object Identifier) of dataset.",
+      "example": "",
+      "type": "string"
+    },
+    "linked_doi": {
+      "description": "DOI (Digital Object Identifier) of associated objects.",
+      "example": ["10.1101/2020.06.02.129502"],
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "funding_sources": {
+      "description": "Any funding sources used to generate this dataset. If the funding number is available, it should be given.",
+      "example": ["Wellcome Trust 204686/Z/16/Z"],
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "prereg_doi": {
+      "description": "DOI (Digital Object Identifier) of pre-registration document describing data collection.",
+      "example": "",
+      "type": "string"
+    },
+    "clinical_trial": {
+      "description": "Is this a registered clinical trial?",
+      "example": "",
+      "type": "boolean"
+    },
+    "clinical_trial_id": {
+      "description": "Clinical trial identifier.",
+      "example": "",
       "type": "string"
     },
     "description": {
-      "description": "Study description. Ex: aim, target population, etc.",
+      "description": "Short description of the study.",
+      "example": "",
+      "type": "string"
+    },
+    "sample": {
+      "description": "Short description of the study sample.",
+      "example": "ACHM patients",
+      "type": "string"
+    },
+    "intervention": {
+      "description": "Short description of the study intervention, if any.",
       "type": "string"
     },
     "keywords": {
-      "description": "Key words concerning the study",
+      "description": "Key words describing the study.",
       "type": "array",
       "minItems": 3,
       "items": {
@@ -103,5 +153,5 @@
       "required": ["period", "contributors"]
     }
   },
-  "required": [ "acronym", "uuid", "description", "keywords", "instructions", "data_collection"]
+  "required": [ "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_collection"]
 }
