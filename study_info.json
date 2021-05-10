@@ -35,6 +35,12 @@
   "description": "Information about the study",
   "type": "object",
   "properties": {
+   "data_owner" : {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "contact_email" : { "type": "string", "format": "idn-email" },
+      }
     "studyid": {
       "description": "Study identifier.",
       "example": "ACHM2019",
@@ -43,6 +49,11 @@
     "uuid": {
       "description": "MD5 hash generated from the `studyid` (Study identifier) field.",
       "example": "01d429fd3c4cc02697eea7f3fe838c54",
+      "type": "string"
+    },
+    "license" : {
+      "description": "License of the dataset.",
+      "example": "CC-BY",
       "type": "string"
     },
     "doi": {
@@ -172,7 +183,7 @@
       "required": ["wear_time"]
     },
     "contributors": { "$ref": "#/definitions/person"},
-    "data_colllection": {
+    "data_collection": {
       "description": "Information about the data collection effort.",
       "type": "object",
       "properties": {
@@ -207,5 +218,5 @@
       "required": ["period", "contributors"]
     }
   },
-  "required": [ "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_colllection"]
+  "required": [ "data_owner", "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_colllection"]
 }
