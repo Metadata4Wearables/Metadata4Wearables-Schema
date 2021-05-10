@@ -8,7 +8,9 @@ vocabulary.
 
 ## Online schema validator
 
-So far, the schema were validated using https://www.json-schema-linter.com/
+So far, the schema were validated using
+* https://www.json-schema-linter.com/
+* https://jsonlint.com
 
 ## List of schemas
 
