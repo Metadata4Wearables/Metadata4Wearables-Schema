@@ -95,10 +95,12 @@
     },
     "intervention": {
       "description": "Short description of the study intervention, if any.",
+      "example": "",
       "type": "string"
     },
     "keywords": {
       "description": "Key words describing the study.",
+      "example": ["actigraphy", "congenital achromatopsia", "circadian"],
       "type": "array",
       "minItems": 3,
       "items": {
@@ -109,16 +111,23 @@
       "description": "Description of the instructions that were given to the study participants prior to or during the data acquisition.",
       "type": "object",
       "properties": {
+        "verbatim_instruction": {
+          "description": "Verbatim instructions given to participant.",
+          "example": "",
+          "type": "string",
+        },
         "wear_time": {
           "description": "Number of days the participants were instructed to wear the actigraph. Fractional values are allowed.",
+          "example": 21,
           "type": "number",
           "minimum": 0
         }
       },
       "required": ["wear_time"]
     },
-    "data_collection": {
-      "description": "Informations about the data collection.",
+    "contributors": { "$ref": "#/definitions/person"},
+    "data_colllection": {
+      "description": "Information about the data collection effort.",
       "type": "object",
       "properties": {
         "period": {
@@ -148,10 +157,9 @@
             }
           }
         },
-        "contributors": { "$ref": "#/definitions/person"}
       },
       "required": ["period", "contributors"]
     }
   },
-  "required": [ "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_collection"]
+  "required": [ "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_colllection"]
 }
