@@ -45,15 +45,6 @@
       "example": "01d429fd3c4cc02697eea7f3fe838c54",
       "type": "string"
     },
-    "funding_sources": {
-      "description": "Any funding sources used to generate this dataset. If the funding number is available, it should be given.",
-      "example": ["Wellcome Trust 204686/Z/16/Z"],
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "string"
-      }
-    },
     "prereg_doi": {
       "description": "DOI (Digital Object Identifier) of pre-registration document describing data collection.",
       "example": "",
@@ -134,58 +125,7 @@
         "type": "string"
       }
     },
-    "instructions": {
-      "description": "Description of the instructions that were given to the study participants prior to or during the data acquisition.",
-      "type": "object",
-      "properties": {
-        "verbatim_instruction": {
-          "description": "Verbatim instructions given to participant.",
-          "example": "",
-          "type": "string"
-        },
-        "wear_time": {
-          "description": "Number of days the participants were instructed to wear the actigraph. Fractional values are allowed.",
-          "example": 21,
-          "type": "number",
-          "minimum": 0
-        }
-      },
-      "required": ["wear_time"]
-    },
     "contributors": { "$ref": "#/definitions/person"},
-    "data_collection": {
-      "description": "Information about the data collection effort.",
-      "type": "object",
-      "properties": {
-        "period": {
-          "description": "Time period during which the data collection has been performed.",
-          "type": "object",
-          "properties": {
-            "start_date_time": {
-              "description": "Start date-time for the data collection.",
-              "type": "string",
-              "format": "date-time"
-            },
-            "ongoing": {
-              "description": "Indicate if the data collection is still ongoing.",
-              "type": "boolean"
-            }
-          },
-          "if": {
-            "properties": { "ongoing": { "const": true } }
-          },
-          "then": {
-            "properties": {
-              "stop_date_time": {
-                "description": "Stop date-time for the data collection.",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          }
-        }
-      },
-      "required": ["period", "contributors"]
     }
   },
   "if": {
@@ -200,5 +140,5 @@
       }
     }
   },
-  "required": [ "data_owner", "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_colllection"]
+  "required": ["name", "uuid", "clinical_trial", "sample", "description", "keywords"]
 }
