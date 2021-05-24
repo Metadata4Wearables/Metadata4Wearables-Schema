@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/study_info.json",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/project.json",
   "definitions": {
     "person": {
       "type": "object",
@@ -31,38 +31,19 @@
       "required": ["name", "role", "institution"]
     }
   },
-  "title": "Study information",
-  "description": "Information about the study",
+  "title": "Project information",
+  "description": "Information about the project",
   "type": "object",
   "properties": {
     "name": {
-      "description": "Study name.",
-      "example": "ACHM2019",
+      "description": "Project name.",
+      "example": "ACHM2019_Project",
       "type": "string"
     },
     "uuid": {
       "description": "MD5 hash generated from the `name` field.",
-      "example": "01d429fd3c4cc02697eea7f3fe838c54",
+      "example": "c815b5d426655176b74852f07dc7ef02",
       "type": "string"
-    },
-    "license" : {
-      "description": "License of the dataset.",
-      "example": "CC-BY",
-      "type": "string"
-    },
-    "doi": {
-      "description": "DOI (Digital Object Identifier) of dataset.",
-      "example": "",
-      "type": "string"
-    },
-    "linked_doi": {
-      "description": "DOI (Digital Object Identifier) of associated objects.",
-      "example": ["10.1101/2020.06.02.129502"],
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "string"
-      }
     },
     "funding_sources": {
       "description": "Any funding sources used to generate this dataset. If the funding number is available, it should be given.",
@@ -73,79 +54,13 @@
         "type": "string"
       }
     },
-    "prereg_doi": {
-      "description": "DOI (Digital Object Identifier) of pre-registration document describing data collection.",
-      "example": "",
-      "type": "string"
-    },
-    "clinical_trial": {
-      "description": "Is this a registered clinical trial?",
-      "example": "",
-      "type": "boolean"
-    },
     "description": {
-      "description": "Short description of the study.",
-      "example": "",
-      "type": "string"
-    },
-    "sample": {
-      "description": "Short description of the study sample.",
-      "example": "Healthy control participants and ACHM patients",
-      "type": "string"
-    },
-    "sample_groups": {
-      "description": "Description of the sample group(s).",
-      "example": "ACHM patients",
-      "type": "object",
-      "properties": {
-        "name": {
-            "description": "Name of group.",
-            "example": "ACHM patients",
-            "type": "string"
-          },
-        "description": {
-            "description": "Description of sample group.",
-            "example": "",
-            "type": "string"
-          },
-        "label": {
-            "description": "Label of sample group.",
-            "example": 0,
-            "type": "integer"
-          },
-        "group_size": {
-            "description": "Group size.",
-            "example": 6,
-            "type": "integer",
-            "minimum": 1
-          },
-        "inclusion_criteria": {
-            "description": "Inclusion criteria for sample group.",
-            "example": "",
-            "type": "array",
-            "minItems": 0,
-            "items": {
-              "type": "string"
-            }
-          },
-        "exclusion_criteria": {
-            "description": "Exclusion criteria for sample group.",
-            "example": "",
-            "type": "array",
-            "minItems": 0,
-            "items": {
-              "type": "string"
-            }
-          }
-      }
-    },
-    "intervention": {
-      "description": "Short description of the study intervention, if any.",
+      "description": "Short description of the project.",
       "example": "",
       "type": "string"
     },
     "keywords": {
-      "description": "Key words describing the study.",
+      "description": "Key words describing the projects.",
       "example": ["actigraphy", "congenital achromatopsia", "circadian"],
       "type": "array",
       "minItems": 3,
@@ -153,40 +68,22 @@
         "type": "string"
       }
     },
-    "instructions": {
-      "description": "Description of the instructions that were given to the study participants prior to or during the data acquisition.",
-      "type": "object",
-      "properties": {
-        "verbatim_instruction": {
-          "description": "Verbatim instructions given to participant.",
-          "example": "",
-          "type": "string"
-        },
-        "wear_time": {
-          "description": "Number of days the participants were instructed to wear the actigraph. Fractional values are allowed.",
-          "example": 21,
-          "type": "number",
-          "minimum": 0
-        }
-      },
-      "required": ["wear_time"]
-    },
     "contributors": { "$ref": "#/definitions/person"},
-    "data_collection": {
-      "description": "Information about the data collection effort.",
+    "project_status": {
+      "description": "Information about the project.",
       "type": "object",
       "properties": {
         "period": {
-          "description": "Time period during which the data collection has been performed.",
+          "description": "Time period during which the project took place.",
           "type": "object",
           "properties": {
             "start_date_time": {
-              "description": "Start date-time for the data collection.",
+              "description": "Start date-time for the project.",
               "type": "string",
               "format": "date-time"
             },
             "ongoing": {
-              "description": "Indicate if the data collection is still ongoing.",
+              "description": "Indicate if the project is still ongoing (true) or completed (false).",
               "type": "boolean"
             }
           },
@@ -196,7 +93,7 @@
           "then": {
             "properties": {
               "stop_date_time": {
-                "description": "Stop date-time for the data collection.",
+                "description": "Stop date-time for the project.",
                 "type": "string",
                 "format": "date-time"
               }
@@ -204,20 +101,8 @@
           }
         }
       },
-      "required": ["period", "contributors"]
+      "required": ["period"]
     }
   },
-  "if": {
-    "properties": { "clinical_trial": { "const": true } }
-  },
-  "then": {
-    "properties": {
-      "clinical_trial_id": {
-        "description": "Clinical trial identifier.",
-        "example": "",
-        "type": "string"
-      }
-    }
-  },
-  "required": [ "data_owner", "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_colllection"]
+  "required": ["name", "uuid", "description", "keywords", "contributors", "project_status"]
 }
