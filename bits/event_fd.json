@@ -1,0 +1,41 @@
+{
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "number",
+      "description": "The unique identifier for an event",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "event_name",
+      "type": "string",
+      "description": "Name of the event",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "start_date_time",
+      "type": "string",
+      "description": "Start date-time for an event",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "stop_date_time",
+      "type": "string",
+      "description": "Stop date-time for an event",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "comment",
+      "type": "string",
+      "description": "Comment about an event"
+    }
+  ]
+}
