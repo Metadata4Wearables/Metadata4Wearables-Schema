@@ -60,7 +60,7 @@
 			"required": ["name", "spectral_sensitivity", "linearity", "directional_response"]
 		}
 	},
-	"title": "Device information,
+	"title": "Device information",
 	"description": "Information about the light sensor",
 	"type": "object",
 	"properties": {
