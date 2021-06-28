@@ -1,1 +1,162 @@
-
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/study.json",
+	"definitions": {
+		"person": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"role": {
+					"description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
+					"type": "string",
+					"pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
+				},
+				"email": {
+					"type": "string",
+					"format": "idn-email"
+				},
+				"orcid": {
+					"description": "ORCID identifier",
+					"type": "string",
+					"pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+				},
+				"institution": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"street_address": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						}
+					},
+					"required": ["name", "country"]
+				}
+			},
+			"required": ["name", "role", "institution"]
+		}
+	},
+	"title": "Study information",
+	"description": "Information about the study",
+	"type": "object",
+	"properties": {
+		"name": {
+			"description": "Study name.",
+			"example": "ACHM2019",
+			"type": "string"
+		},
+		"uuid": {
+			"description": "MD5 hash generated from the `name` field.",
+			"example": "01d429fd3c4cc02697eea7f3fe838c54",
+			"type": "string"
+		},
+		"prereg_doi": {
+			"description": "DOI (Digital Object Identifier) of pre-registration document describing data collection.",
+			"example": "",
+			"type": "string"
+		},
+		"clinical_trial": {
+			"description": "Is this a registered clinical trial?",
+			"example": "",
+			"type": "boolean"
+		},
+		"description": {
+			"description": "Short description of the study.",
+			"example": "",
+			"type": "string"
+		},
+		"sample": {
+			"description": "Short description of the study sample.",
+			"example": "Healthy control participants and ACHM patients",
+			"type": "string"
+		},
+		"sample_groups": {
+			"description": "Description of the sample group(s).",
+			"example": "ACHM patients",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Name of group.",
+					"example": "ACHM patients",
+					"type": "string"
+				},
+				"description": {
+					"description": "Description of sample group.",
+					"example": "",
+					"type": "string"
+				},
+				"label": {
+					"description": "Label of sample group.",
+					"example": 0,
+					"type": "integer"
+				},
+				"group_size": {
+					"description": "Group size.",
+					"example": 6,
+					"type": "integer",
+					"minimum": 1
+				},
+				"inclusion_criteria": {
+					"description": "Inclusion criteria for sample group.",
+					"example": "",
+					"type": "array",
+					"minItems": 0,
+					"items": {
+						"type": "string"
+					}
+				},
+				"exclusion_criteria": {
+					"description": "Exclusion criteria for sample group.",
+					"example": "",
+					"type": "array",
+					"minItems": 0,
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"intervention": {
+			"description": "Short description of the study intervention, if any.",
+			"example": "",
+			"type": "string"
+		},
+		"keywords": {
+			"description": "Key words describing the study.",
+			"example": ["actigraphy", "congenital achromatopsia", "circadian"],
+			"type": "array",
+			"minItems": 3,
+			"items": {
+				"type": "string"
+			}
+		},
+		"contributors": {
+			"$ref": "#/definitions/person"
+		}
+	},
+	"if": {
+		"properties": {
+			"clinical_trial": {
+				"const": true
+			}
+		}
+	},
+	"then": {
+		"properties": {
+			"clinical_trial_id": {
+				"description": "Clinical trial identifier.",
+				"example": "",
+				"type": "string"
+			}
+		}
+	},
+	"required": ["name", "uuid", "clinical_trial", "sample", "description", "keywords"]
+}
