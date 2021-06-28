@@ -79,7 +79,7 @@
 			"example": "",
 			"type": "string"
 		},
-		"type": {
+		"sensor_type": {
 			"description": "Measurement device type",
 			"example": "Spectrometer, multi-channel device, ...",
 			"type": "string"
@@ -90,7 +90,7 @@
 	},
 	"if": {
 		"properties": {
-			"clinical_trial": {
+			"sensor_type": {
 				"const": true
 			}
 		}
