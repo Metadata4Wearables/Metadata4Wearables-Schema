@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  28 JUN 2021 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  19 JUL 2021 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -776,132 +776,231 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 1
-38.
+33.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tex-gyre/ts1qtm.fd
 File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--201
-[]\T1/qtm/m/n/10 fund-
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
+[]\T1/qtm/m/n/10 sam-
  []
 
 
-Overfull \hbox (6.94418pt too wide) in paragraph at lines 199--201
-\T1/qtm/m/n/10 ing_sources 
+Underfull \hbox (badness 10000) detected at line 319
+[]\T1/qtm/m/n/10 sam-
  []
 
 
-Overfull \hbox (6.94418pt too wide) detected at line 204
-\T1/qtm/m/n/10 ing_sources 
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
+[]\T1/qtm/m/n/10 in-clu-
  []
 
 
-Underfull \hbox (badness 10000) detected at line 204
-[]\T1/qtm/m/n/10 fund-
+Underfull \hbox (badness 10000) detected at line 488
+[]\T1/qtm/m/n/10 in-clu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
-[]\T1/qtm/b/n/10 de-scrip-
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
+[]\T1/qtm/m/n/10 ex-clu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
-[]\T1/qtm/b/n/10 con-trib-u-
+Underfull \hbox (badness 10000) detected at line 539
+[]\T1/qtm/m/n/10 ex-clu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 731--733
+[]\T1/qtm/m/n/10 clin-i-
  []
 
 
-Overfull \hbox (19.66418pt too wide) in paragraph at lines 353--355
-\T1/qtm/b/n/10 project_status 
- []
-
-
-Overfull \hbox (19.66418pt too wide) detected at line 358
-\T1/qtm/b/n/10 project_status 
- []
-
-
-Underfull \hbox (badness 10000) detected at line 358
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--431
-[]
- []
-
-
-Overfull \hbox (20.93417pt too wide) in paragraph at lines 429--431
-\T1/qtm/m/n/10 start_date_time 
- []
-
-
-Overfull \hbox (20.93417pt too wide) detected at line 434
-\T1/qtm/m/n/10 start_date_time 
- []
-
-
-Underfull \hbox (badness 10000) detected at line 434
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
-[]
- []
-
-
-Overfull \hbox (20.13419pt too wide) in paragraph at lines 543--545
-\T1/qtm/m/n/10 stop_date_time 
- []
-
-
-Overfull \hbox (20.13419pt too wide) detected at line 548
-\T1/qtm/m/n/10 stop_date_time 
- []
-
-
-Underfull \hbox (badness 10000) detected at line 548
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 746--748
-[]\T1/qtm/b/n/10 in-sti-tu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 791--793
-[]
- []
-
-
-Overfull \hbox (15.6742pt too wide) in paragraph at lines 791--793
-\T1/qtm/m/n/10 street_address 
+Underfull \hbox (badness 10000) detected at line 736
+[]\T1/qtm/m/n/10 clin-i-
  []
 
 [1
 
-] [2]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 972--974
+[]
+ []
+
+[2]
 Chapter 2.
-(./cdsig-schema.ind) [3
+
+Underfull \hbox (badness 10000) in paragraph at lines 1186--1188
+[]
+ []
+
+
+Overfull \hbox (1.75418pt too wide) in paragraph at lines 1186--1188
+\T1/qtm/m/n/10 linked_doi 
+ []
+
+
+Overfull \hbox (1.75418pt too wide) detected at line 1191
+\T1/qtm/m/n/10 linked_doi 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1191
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1241--1243
+[]\T1/qtm/b/n/10 de-scrip-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1273
+[]\T1/qtm/b/n/10 in-struc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1309--1311
+[]\T1/qtm/m/n/10 ver-ba-
+ []
+
+
+Overfull \hbox (20.34416pt too wide) in paragraph at lines 1309--1311
+\T1/qtm/m/n/10 tim_instruction 
+ []
+
+
+Overfull \hbox (20.34416pt too wide) detected at line 1314
+\T1/qtm/m/n/10 tim_instruction 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1314
+[]\T1/qtm/m/n/10 ver-ba-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1341
+[]
+ []
+
+
+Overfull \hbox (3.90416pt too wide) in paragraph at lines 1339--1341
+\T1/qtm/b/n/10 wear_time 
+ []
+
+
+Overfull \hbox (3.90416pt too wide) detected at line 1344
+\T1/qtm/b/n/10 wear_time 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1344
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1378--1380
+[]\T1/qtm/m/n/10 con-trib-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1470--1472
+[]
+ []
+
+
+Overfull \hbox (20.93417pt too wide) in paragraph at lines 1470--1472
+\T1/qtm/m/n/10 start_date_time 
+ []
+
+
+Overfull \hbox (20.93417pt too wide) detected at line 1475
+\T1/qtm/m/n/10 start_date_time 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1475
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1584--1586
+[]
+ []
+
+
+Overfull \hbox (20.13419pt too wide) in paragraph at lines 1584--1586
+\T1/qtm/m/n/10 stop_date_time 
+ []
+
+
+Overfull \hbox (20.13419pt too wide) detected at line 1589
+\T1/qtm/m/n/10 stop_date_time 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1589
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1630--1632
+[]\T1/qtm/m/n/10 clin-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1664--1666
+[]\T1/qtm/m/n/10 clin-i-
+ []
+
+
+Overfull \hbox (4.92416pt too wide) in paragraph at lines 1664--1666
+\T1/qtm/m/n/10 cal_trial_id 
+ []
+
+
+Overfull \hbox (4.92416pt too wide) detected at line 1669
+\T1/qtm/m/n/10 cal_trial_id 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1669
+[]\T1/qtm/m/n/10 clin-i-
+ []
+
+[3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1864--1866
+[]\T1/qtm/b/n/10 in-sti-tu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1909--1911
+[]
+ []
+
+
+Overfull \hbox (15.6742pt too wide) in paragraph at lines 1909--1911
+\T1/qtm/m/n/10 street_address 
+ []
+
+[4]
+Chapter 3.
+(./cdsig-schema.ind) [5
 
 ] (./cdsig-schema.aux)
 Package rerunfilecheck Info: File `cdsig-schema.out' has not changed.
-(rerunfilecheck)             Checksum: C641A7BA201F4689250C160AC633DC83;280.
+(rerunfilecheck)             Checksum: 803BEFCE205CE9F72EEA82E2BF4F410A;340.
  ) 
 Here is how much of TeX's memory you used:
- 13411 strings out of 478994
- 195254 string characters out of 5858184
- 614697 words of memory out of 5000000
- 30538 multiletter control sequences out of 15000+600000
+ 13442 strings out of 478994
+ 195799 string characters out of 5858184
+ 623796 words of memory out of 5000000
+ 30565 multiletter control sequences out of 15000+600000
  447494 words of font info for 62 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 83i,11n,88p,254b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,13n,88p,254b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/l
 ocal/texlive/2021/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}</usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/local/texlive/2
@@ -909,10 +1008,10 @@ live/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/local/texlive/2
 xmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb></usr/local/texlive/2021/texmf-di
 st/fonts/type1/public/tex-gyre/qtmr.pfb></usr/local/texlive/2021/texmf-dist/fon
 ts/type1/public/tex-gyre/qtmri.pfb>
-Output written on cdsig-schema.pdf (7 pages, 129769 bytes).
+Output written on cdsig-schema.pdf (9 pages, 138503 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

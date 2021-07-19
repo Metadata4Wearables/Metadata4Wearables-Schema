@@ -10,11 +10,10 @@ Welcome to CDSIG-Schema's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/project.json
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. jsonschema:: :auto_reference: /Users/spitschan/Projects/CDSIG-Schema/project.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/study.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/dataset.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/participant.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/event.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/actiwatch.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/lightsensor.json
