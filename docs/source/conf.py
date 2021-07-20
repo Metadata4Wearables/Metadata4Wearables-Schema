@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'CDSIG-Schema'
-copyright = '2021, CDSIG'
-author = 'CDSIG'
+project = 'DLA/CDSIG-Schema-Draft-v0.0.1'
+copyright = '2021, DLA/CDSIG'
+author = 'DLA/CDSIG'
 
 
 # -- General configuration ---------------------------------------------------
@@ -57,3 +57,9 @@ html_static_path = ['_static']
 
 jsonschema_options = {'lift_description': True, 'auto_reference': True}
 
+
+# LaTeX elements
+
+latex_elements = {
+'passoptionstopackages': r'\PassOptionsToPackage{landscape=true}{geometry}',
+}

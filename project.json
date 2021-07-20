@@ -31,22 +31,22 @@
       "required": ["name", "role", "institution"]
     }
   },
-  "title": "Project information",
-  "description": "Information about the project",
+  "title": "Project-level metadata",
+  "description": "Project-level metadata is metadata that describes the project. A project could be a wider organisational unit of studies. For example, there may be different substudies within a project.",
   "type": "object",
   "properties": {
     "name": {
-      "description": "Project name.",
+      "description": "Informative or internal name of the project",
       "example": "ACHM2019_Project",
       "type": "string"
     },
     "uuid": {
-      "description": "MD5 hash generated from the `name` field.",
+      "description": "This is a uniqe MD5 hash generated from the `name` field",
       "example": "c815b5d426655176b74852f07dc7ef02",
       "type": "string"
     },
     "funding_sources": {
-      "description": "Any funding sources used to generate this dataset. If the funding number is available, it should be given.",
+      "description": "Any funding sources supporting the project. If the funding number is available, it should be given",
       "example": ["Wellcome Trust 204686/Z/16/Z"],
       "type": "array",
       "minItems": 1,
@@ -55,7 +55,7 @@
       }
     },
     "description": {
-      "description": "Short description of the project.",
+      "description": "Short narrative description of the project. This could include any further information on the project and the context in which it was completed",
       "example": "",
       "type": "string"
     },
@@ -70,20 +70,20 @@
     },
     "contributors": { "$ref": "#/definitions/person"},
     "project_status": {
-      "description": "Information about the project.",
+      "description": "Status of the project (i.e. if it is still running)",
       "type": "object",
       "properties": {
         "period": {
-          "description": "Time period during which the project took place.",
+          "description": "Time period during which the project took place",
           "type": "object",
           "properties": {
             "start_date_time": {
-              "description": "Start date-time for the project.",
+              "description": "Start date-time for the project",
               "type": "string",
               "format": "date-time"
             },
             "ongoing": {
-              "description": "Indicate if the project is still ongoing (true) or completed (false).",
+              "description": "Indicate if the project is still ongoing (true) or completed (false)",
               "type": "boolean"
             }
           },
@@ -93,7 +93,7 @@
           "then": {
             "properties": {
               "stop_date_time": {
-                "description": "Stop date-time for the project.",
+                "description": "Stop date-time for the project",
                 "type": "string",
                 "format": "date-time"
               }

@@ -1,108 +1,101 @@
 {
-	"$schema": "https://json-schema.org/draft-07/schema",
-	"$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/device_lightsensor.json",
-	"definitions": {
-		"channel": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"description": "Name of the channel",
-					"type": "string"
-				},
-				"description": {
-					"description": "Description of the channel",
-					"type": "string",
-				},
-				"spectral_sensitivity": {
-					"type": "object",
-					"properties": {
-						"spectral_sensitivity_calibration_status": {
-							"type": "boolean"
-						},
-						"spectral_sensitivity_calibration_type": {
-							"type": "string"
-						},
-						"spectral_sensitivity_calibration_details": {
-							"type": "string"
-					},
-					"required": ["spectral_sensitivity_calibration_status"]
-				},
-				"linearity": {
-					"type": "object",
-					"properties": {
-						"linearity_calibration_status": {
-							"type": "boolean"
-						},
-						"linearity_calibration_type": {
-							"type": "string"
-						},
-						"linearity_calibration_details": {
-							"type": "string"
-					},
-					"required": ["linearity_calibration_status"]
-				},
-				"directional_response": {
-					"type": "object",
-					"properties": {
-						"directional_response_calibration_status": {
-							"type": "boolean"
-						},
-						"directional_response_calibration_type": {
-							"type": "string"
-						},
-						"directional_response_calibration_details": {
-							"type": "string"
-					},
-					"required": ["directional_response_calibration_status"]
-				},
-				}
-			},
-			"required": ["name", "spectral_sensitivity", "linearity", "directional_response"]
-		}
-	},
-	"title": "Device information",
-	"description": "Information about the light sensor",
-	"type": "object",
-	"properties": {
-		"manufacturer": {
-			"description": "Manufacturer of the device",
-			"example": "",
-			"type": "string"
-		},
-		"model": {
-			"description": "Model of the device",
-			"example": "",
-			"type": "string"
-		},
-		"serial_number": {
-			"description": "Serial number of the device",
-			"example": "",
-			"type": "string"
-		},
-		"sensor_type": {
-			"description": "Measurement device type",
-			"example": "Spectrometer, multi-channel device, ...",
-			"type": "string"
-		},
-		"channels": {
-			"$ref": "#/definitions/channel"
-		}
-	},
-	"if": {
-		"properties": {
-			"sensor_type": {
-				"const": true
-			}
-		}
-	},
-	"then": {
-		"properties": {
-			"clinical_trial_id": {
-				"description": "Clinical trial identifier.",
-				"example": "",
-				"type": "string"
-			}
-		}
-	},
-	"required": ["name", "uuid", "clinical_trial", "sample", "description", "keywords"]
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/lightsensor.json",
+  "definitions": {
+    "channel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the channel",
+          "type": "string"
+        },
+        "description": {
+          "description": "Description of the channel",
+          "type": "string"
+        },
+        "spectralsensitivity": {
+          "type": "object",
+          "properties": {
+            "spectral_sensitivity_calibration_status": {
+              "type": "boolean"
+            },
+            "spectral_sensitivity_calibration_type": {
+              "type": "string"
+            },
+            "spectral_sensitivity_calibration_details": {
+              "type": "string"
+            },
+            "required": ["spectral_sensitivity_calibration_status"]
+          },
+          "linearity": {
+            "type": "object",
+            "properties": {
+              "linearity_calibration_status": {
+                "type": "boolean"
+              },
+              "linearity_calibration_type": {
+                "type": "string"
+              },
+              "linearity_calibration_details": {
+                "type": "string"
+              },
+              "required": ["linearity_calibration_status"]
+            },
+            "directional_response": {
+              "type": "object",
+              "properties": {
+                "directional_response_calibration_status": {
+                  "type": "boolean"
+                },
+                "directional_response_calibration_type": {
+                  "type": "string"
+                },
+                "directional_response_calibration_details": {
+                  "type": "string"
+                },
+                "required": ["directional_response_calibration_status"]
+              }
+            }
+          },
+          "required": [
+            "name",
+            "spectral_sensitivity",
+            "linearity",
+            "directional_response"
+          ]
+        }
+      }
+    }
+    },
+    "title": "Specification of light-sensing device",
+    "description": "Information about the light sensor used",
+    "type": "object",
+    "properties": {
+      "manufacturer": {
+        "description": "Manufacturer of the device",
+        "example": "",
+        "type": "string"
+      },
+      "uuid": {
+        "description": "MD5 hash generated from the `name` field.",
+        "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+        "type": "string"
+      },
+      "model": {
+        "description": "Model of the device",
+        "example": "",
+        "type": "string"
+      },
+      "serial_number": {
+        "description": "Serial number of the device",
+        "example": "",
+        "type": "string"
+      },
+      "sensor_type": {
+        "description": "Measurement device type",
+        "example": "Raw accelerometer, count-based data",
+        "type": "string"
+      }
+  },
+ "required": ["manufacturer", "model"]
 }

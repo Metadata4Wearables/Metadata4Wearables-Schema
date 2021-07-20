@@ -44,22 +44,27 @@
 			"required": ["name", "role", "institution"]
 		}
 	},
-	"title": "Study information",
-	"description": "Information about the study",
+	"title": "Study-level metadata",
+	"description": "Study-level metadata describes any information on a specific study, e.g. a specific data collection effort with multiple participants",
 	"type": "object",
 	"properties": {
 		"name": {
-			"description": "Study name.",
+			"description": "Informative or internal study name",
 			"example": "ACHM2019",
 			"type": "string"
 		},
 		"uuid": {
-			"description": "MD5 hash generated from the `name` field.",
+			"description": "Unique MD5 hash generated from the `name` field",
 			"example": "01d429fd3c4cc02697eea7f3fe838c54",
 			"type": "string"
 		},
 		"prereg_doi": {
-			"description": "DOI (Digital Object Identifier) of pre-registration document describing data collection.",
+			"description": "DOI (Digital Object Identifier) of pre-registration document describing data collection",
+			"example": "",
+			"type": "string"
+		},
+		"ethics_information": {
+			"description": "Name of ethics committee and approval number",
 			"example": "",
 			"type": "string"
 		},
@@ -69,7 +74,7 @@
 			"type": "boolean"
 		},
 		"description": {
-			"description": "Short description of the study.",
+			"description": "Short narrative description of the study",
 			"example": "",
 			"type": "string"
 		},
@@ -79,7 +84,7 @@
 			"type": "string"
 		},
 		"sample_groups": {
-			"description": "Description of the sample group(s).",
+			"description": "Description of the sample group(s) enrolled or examined in the study",
 			"example": "ACHM patients",
 			"type": "object",
 			"properties": {
@@ -89,23 +94,23 @@
 					"type": "string"
 				},
 				"description": {
-					"description": "Description of sample group.",
+					"description": "Description of sample group",
 					"example": "",
 					"type": "string"
 				},
 				"label": {
-					"description": "Label of sample group.",
+					"description": "Label of sample group",
 					"example": 0,
 					"type": "integer"
 				},
 				"group_size": {
-					"description": "Group size.",
+					"description": "Group size",
 					"example": 6,
 					"type": "integer",
 					"minimum": 1
 				},
 				"inclusion_criteria": {
-					"description": "Inclusion criteria for sample group.",
+					"description": "Inclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
 					"minItems": 0,
@@ -114,7 +119,7 @@
 					}
 				},
 				"exclusion_criteria": {
-					"description": "Exclusion criteria for sample group.",
+					"description": "Exclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
 					"minItems": 0,
@@ -125,7 +130,7 @@
 			}
 		},
 		"intervention": {
-			"description": "Short description of the study intervention, if any.",
+			"description": "Short description of the study intervention, if any",
 			"example": "",
 			"type": "string"
 		},
@@ -152,11 +157,11 @@
 	"then": {
 		"properties": {
 			"clinical_trial_id": {
-				"description": "Clinical trial identifier.",
+				"description": "Clinical trial identifier as well as registry",
 				"example": "",
 				"type": "string"
 			}
 		}
 	},
-	"required": ["name", "uuid", "clinical_trial", "sample", "description", "keywords"]
+	"required": ["name", "uuid", "clinical_trial", "ethics_information", "sample", "description", "keywords"]
 }
