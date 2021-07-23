@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  20 JUL 2021 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  23 JUL 2021 09:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -849,12 +849,12 @@ Overfull \hbox (45.72403pt too wide) in paragraph at lines 3542--3544
 [19] (./dlacdsig-schema-draft-v001.ind) [20] (./dlacdsig-schema-draft-v001.aux)
 Package rerunfilecheck Info: File `dlacdsig-schema-draft-v001.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 60BF2635269CB2DE68350542EA0D3F77;1331.
+(rerunfilecheck)             Checksum: 2D6B79DF85B11D54B168A3757FF37AFB;1336.
  ) 
 Here is how much of TeX's memory you used:
  13478 strings out of 478994
- 196612 string characters out of 5858184
- 606295 words of memory out of 5000000
+ 196613 string characters out of 5858184
+ 606296 words of memory out of 5000000
  30581 multiletter control sequences out of 15000+600000
  447494 words of font info for 62 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -866,7 +866,7 @@ live/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/local/texlive/2
 xmf-dist/fonts/type1/public/tex-gyre/qtmb.pfb></usr/local/texlive/2021/texmf-di
 st/fonts/type1/public/tex-gyre/qtmr.pfb></usr/local/texlive/2021/texmf-dist/fon
 ts/type1/public/tex-gyre/qtmri.pfb>
-Output written on dlacdsig-schema-draft-v001.pdf (24 pages, 157474 bytes).
+Output written on dlacdsig-schema-draft-v001.pdf (24 pages, 157499 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  156 compressed objects within 2 object streams

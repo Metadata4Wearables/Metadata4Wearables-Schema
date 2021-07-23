@@ -15,6 +15,6 @@ Welcome to CDSIG-Schema's documentation!
 .. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/dataset.json
 .. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/event.json
 .. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/participant.json
-.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/actiwatch.json
+.. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/actigraphydevice.json
 .. jsonschema:: /Users/spitschan/Projects/CDSIG-Schema/lightsensor.json
 
