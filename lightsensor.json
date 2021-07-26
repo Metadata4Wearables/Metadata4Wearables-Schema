@@ -56,15 +56,15 @@
                 "required": ["directional_response_calibration_status"]
               }
             }
-          },
-          "required": [
-            "name",
-            "spectral_sensitivity",
-            "linearity",
-            "directional_response"
-          ]
+          }
         }
-      }
+      },
+      "required": [
+        "name",
+        "spectral_sensitivity",
+        "linearity",
+        "directional_response"
+      ]
     }
     },
     "title": "Specification of light-sensing device",
