@@ -40,22 +40,22 @@
                 "type": "string"
               },
               "required": ["linearity_calibration_status"]
-            },
-            "directional_response": {
-              "type": "object",
-              "properties": {
-                "directional_response_calibration_status": {
-                  "type": "boolean"
-                },
-                "directional_response_calibration_type": {
-                  "type": "string"
-                },
-                "directional_response_calibration_details": {
-                  "type": "string"
-                },
-                "required": ["directional_response_calibration_status"]
-              }
             }
+          }
+        },
+        "directional_response": {
+          "type": "object",
+          "properties": {
+            "directional_response_calibration_status": {
+              "type": "boolean"
+            },
+            "directional_response_calibration_type": {
+              "type": "string"
+            },
+            "directional_response_calibration_details": {
+              "type": "string"
+            },
+            "required": ["directional_response_calibration_status"]
           }
         }
       },
