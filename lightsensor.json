@@ -26,21 +26,21 @@
               "type": "string"
             },
             "required": ["spectral_sensitivity_calibration_status"]
-          },
-          "linearity": {
-            "type": "object",
-            "properties": {
-              "linearity_calibration_status": {
-                "type": "boolean"
-              },
-              "linearity_calibration_type": {
-                "type": "string"
-              },
-              "linearity_calibration_details": {
-                "type": "string"
-              },
-              "required": ["linearity_calibration_status"]
-            }
+          }
+        },
+        "linearity": {
+          "type": "object",
+          "properties": {
+            "linearity_calibration_status": {
+              "type": "boolean"
+            },
+            "linearity_calibration_type": {
+              "type": "string"
+            },
+            "linearity_calibration_details": {
+              "type": "string"
+            },
+            "required": ["linearity_calibration_status"]
           }
         },
         "directional_response": {
