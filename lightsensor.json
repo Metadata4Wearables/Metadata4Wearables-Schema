@@ -24,9 +24,9 @@
             },
             "spectral_sensitivity_calibration_details": {
               "type": "string"
-            },
-            "required": ["spectral_sensitivity_calibration_status"]
-          }
+            }
+          },
+          "required": ["spectral_sensitivity_calibration_status"]
         },
         "linearity": {
           "type": "object",
@@ -39,9 +39,9 @@
             },
             "linearity_calibration_details": {
               "type": "string"
-            },
-            "required": ["linearity_calibration_status"]
-          }
+            }
+          },
+          "required": ["linearity_calibration_status"]
         },
         "directional_response": {
           "type": "object",
@@ -54,9 +54,9 @@
             },
             "directional_response_calibration_details": {
               "type": "string"
-            },
-            "required": ["directional_response_calibration_status"]
-          }
+            }
+          },
+          "required": ["directional_response_calibration_status"]
         }
       },
       "required": [
