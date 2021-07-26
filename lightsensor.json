@@ -95,6 +95,12 @@
         "description": "Measurement device type",
         "example": "Raw accelerometer, count-based data",
         "type": "string"
+      },
+      "channels": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/channel"
+        }
       }
   },
  "required": ["manufacturer", "model"]
