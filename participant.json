@@ -12,12 +12,12 @@
         "value": {
           "description": "Value",
           "type": "string"
-        },
-          "required": [
-            "name",
-            "value"
-          ]
-      }
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ]
     }
     },
     "title": "Participant-level metadata",
@@ -43,6 +43,12 @@
         "description": "Sex",
         "example": "",
         "type": "string"
+      },
+      "phenotypes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/phenotype"
+        }
       }
   },
  "required": ["age", "uuid", "sex"]

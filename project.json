@@ -68,7 +68,12 @@
         "type": "string"
       }
     },
-    "contributors": { "$ref": "#/definitions/person"},
+    "contributors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/person"
+      }
+    },
     "project_status": {
       "description": "Status of the project (i.e. if it is still running)",
       "type": "object",
