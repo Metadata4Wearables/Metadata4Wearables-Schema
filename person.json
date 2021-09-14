@@ -9,9 +9,13 @@
 					"type": "string"
 				},
 				"role": {
-					"description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
-					"type": "string",
-					"pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
+					"description": "Role ID(s) according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
+					"type": "array",
+					"items": {
+						"description": "Role ID",
+						"type": "string",
+						"pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
+					}
 				},
 				"email": {
 					"type": "string",
@@ -20,7 +24,7 @@
 				"orcid": {
 					"description": "ORCID identifier",
 					"type": "string",
-					"pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+					"pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9|X]$"
 				},
 				"institution": {
 					"type": "object",
