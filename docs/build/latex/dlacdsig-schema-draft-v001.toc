@@ -1,0 +1,8 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Project\sphinxhyphen {}level metadata}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Study\sphinxhyphen {}level metadata}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Dataset\sphinxhyphen {}level metadata}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Event\sphinxhyphen {}level metadata (within dataset)}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Participant\sphinxhyphen {}level metadata}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Specification of actigraphy device}{17}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Specification of light\sphinxhyphen {}sensing device}{19}{chapter.7}%

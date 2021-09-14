@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/dataset.json",
+  "definitions": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": {
+          "description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
+          "type": "string",
+          "pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
+        },
+        "email": { "type": "string", "format": "idn-email" },
+        "orcid": {
+          "description": "ORCID identifier",
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+        },
+        "institution": {
+          "type": "object",
+          "properties": {
+            "name":           { "type": "string" },
+            "street_address": { "type": "string" },
+            "city":           { "type": "string" },
+            "country":        { "type": "string" }
+          },
+          "required": ["name", "country"]
+        }
+      },
+      "required": ["name", "role", "institution"]
+    }
+  },
+  "title": "Dataset-level metadata",
+  "description": "Dataset-level metadata is metadata concerning one specific, per-participant dataset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Dataset name.",
+      "example": "ACHM2019_Actigraphy_P01",
+      "type": "string"
+    },
+    "uuid": {
+      "description": "MD5 hash generated from the `name` field",
+      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+      "type": "string"
+    },
+    "description": {
+      "description": "Short description of the dataset.",
+      "example": "",
+      "type": "string"
+    },
+    "instructions": {
+      "description": "Description of the instructions that were given to the study participants prior to or during collection of this data set",
+      "type": "object",
+      "properties": {
+        "verbatim_instruction": {
+          "description": "Verbatim instructions given to participant",
+          "example": "",
+          "type": "string"
+        },
+        "wear_time": {
+          "description": "Number of days the participants were instructed to wear the actigraph. Fractional values are allowed",
+          "example": 21,
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": ["wear_time"]
+    },
+    "contributors": { "$ref": "#/definitions/person"},
+    "data_set": {
+      "description": "Information about the data collection effort.",
+      "type": "object",
+      "properties": {
+        "period": {
+          "description": "Time period during which the data collection was performed",
+          "type": "object",
+          "properties": {
+            "start_date_time": {
+              "description": "Start date-time for the data collection",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ongoing": {
+              "description": "Indicate if the data collection is still ongoing",
+              "type": "boolean"
+            }
+          },
+          "if": {
+            "properties": { "ongoing": { "const": true } }
+          },
+          "then": {
+            "properties": {
+              "stop_date_time": {
+                "description": "Stop date-time for the data collection",
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
+      "required": ["period", "contributors"]
+    }
+  },
+  "required": [ "data_owner", "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_collection"]
+}
