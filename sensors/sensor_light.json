@@ -71,32 +71,42 @@
   "description": "Information about the light sensor",
   "type": "object",
   "properties": {
-    "uuid": {
+    "sensor_light_uuid": {
       "description": "MD5 hash generated from the `manufacturer+model` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
-    "manufacturer": {
-      "description": "Manufacturer of the sensor",
+    "sensor_light_manufacturer": {
+      "description": "Manufacturer of the light sensor",
       "example": "Hamamatsu Photonics Co., Ltd",
       "type": "string"
     },
-    "model": {
-      "description": "Model of the sensor",
+    "sensor_light_type": {
+      "description": "Type of the light sensor",
+      "example": "spectrophotometer",
+      "type": "string"
+    },
+    "sensor_light_model": {
+      "description": "Model of the light sensor",
       "example": "C12666MA",
       "type": "string"
     },
-    "serial_number": {
-      "description": "Serial number of the device",
+    "sensor_light_serial_number": {
+      "description": "Serial number of the light sensor",
       "example": "ABCD-1234",
       "type": "string"
     },
-    "channels": {
+    "sensor_light_channels": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/channel"
       }
     }
   },
- "required": ["uuid", "manufacturer", "model", "serial_number"]
+  "required": [
+    "sensor_light_uuid",
+    "sensor_light_manufacturer",
+    "sensor_light_type",
+    "sensor_light_model"
+  ]
 }
