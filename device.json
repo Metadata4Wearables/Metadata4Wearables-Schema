@@ -5,51 +5,56 @@
   "description": "Information about the data acquisition device",
   "type": "object",
   "properties": {
-    "uuid": {
+    "device_uuid": {
       "description": "MD5 hash generated from the `name` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
-    "manufacturer": {
+    "device_manufacturer": {
       "description": "Manufacturer of the device",
       "example": "",
       "type": "string"
     },
-    "model": {
+    "device_model": {
       "description": "Model of the device",
       "example": "",
       "type": "string"
     },
-    "serial_number": {
+    "device_serial_number": {
       "description": "Serial number of the device",
       "example": "",
       "type": "string"
     },
-    "sensors": {
+    "device_sensors": {
       "description": "Sensors included in the device",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "internal_id": {
+          "device_sensor_internal_id": {
             "description": "Internal ID of the sensor",
             "example": "1",
             "type": "number"
           },
-          "name": {
+          "device_sensor_name": {
             "description": "Name of the sensor",
             "example": "Motion sensor",
             "type": "string"
           },
-          "sensor_type": {
-            "description": "Type of sensor",
+          "device_sensor_category": {
+            "description": "Category of data acquired by the sensor",
             "enum": ["motion", "light", "temperature"]
           }
         },
+        "required": [
+          "device_sensor_internal_id",
+          "device_sensor_name",
+          "device_sensor_category"
+        ],
         "allOf": [
           {
             "if": {
-              "properties": { "sensor_type": { "const": "motion" } }
+              "properties": { "device_sensor_category": { "const": "motion" } }
             },
             "then": {
               "properties": {
@@ -57,12 +62,12 @@
                   "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json"
                 }
               },
-              "required": ["sensor"]
+              "required": ["device_sensor"]
             }
           },
           {
             "if": {
-              "properties": { "sensor_type": { "const": "light" } }
+              "properties": { "device_sensor_category": { "const": "light" } }
             },
             "then": {
               "properties": {
@@ -70,12 +75,12 @@
                   "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json"
                 }
               },
-              "required": ["sensor"]
+              "required": ["device_sensor"]
             }
           },
           {
             "if": {
-              "properties": { "sensor_type": { "const": "temperature" } }
+              "properties": { "device_sensor_category": { "const": "temperature" } }
             },
             "then": {
               "properties": {
@@ -83,7 +88,7 @@
                   "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_temperature.json"
                 }
               },
-              "required": ["sensor"]
+              "required": ["device_sensor"]
             }
           }
         ]
