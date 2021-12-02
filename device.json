@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/actiwatch.json",
+  "title": "Specification of the data acquisition device",
+  "description": "Information about the device",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "description": "MD5 hash generated from the `name` field.",
+      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+      "type": "string"
+    },
+    "manufacturer": {
+      "description": "Manufacturer of the device",
+      "example": "",
+      "type": "string"
+    },
+    "model": {
+      "description": "Model of the device",
+      "example": "",
+      "type": "string"
+    },
+    "serial_number": {
+      "description": "Serial number of the device",
+      "example": "",
+      "type": "string"
+    },
+    "sensors": {
+      "description": "Sensors included in the device",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "internal_id": {
+            "description": "Internal ID of the sensor",
+            "example": "1",
+            "type": "number"
+          },
+          "name": {
+            "description": "Name of the sensor",
+            "example": "Motion sensor",
+            "type": "string"
+          },
+          "sensor_type": {
+            "description": "Type of sensor",
+            "enum": ["motion", "light", "temperature"]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": { "sensor_type": { "const": "motion" } }
+            },
+            "then": {
+              "properties": {
+                "sensor": {
+                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json"
+                }
+              },
+              "required": ["sensor"]
+            }
+          },
+          {
+            "if": {
+              "properties": { "sensor_type": { "const": "light" } }
+            },
+            "then": {
+              "properties": {
+                "sensor": {
+                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json"
+                }
+              },
+              "required": ["sensor"]
+            }
+          },
+          {
+            "if": {
+              "properties": { "sensor_type": { "const": "temperature" } }
+            },
+            "then": {
+              "properties": {
+                "sensor": {
+                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_temperature.json"
+                }
+              },
+              "required": ["sensor"]
+            }
+          }
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["uuid", "manufacturer", "model", "serial_number"]
+}
