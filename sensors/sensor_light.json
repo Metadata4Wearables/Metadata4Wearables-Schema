@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/lightsensor.json",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json",
   "definitions": {
     "channel": {
       "type": "object",
@@ -66,42 +66,37 @@
         "directional_response"
       ]
     }
-    },
-    "title": "Specification of light-sensing device",
-    "description": "Information about the light sensor used",
-    "type": "object",
-    "properties": {
-      "manufacturer": {
-        "description": "Manufacturer of the device",
-        "example": "",
-        "type": "string"
-      },
-      "uuid": {
-        "description": "MD5 hash generated from the `name` field.",
-        "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
-        "type": "string"
-      },
-      "model": {
-        "description": "Model of the device",
-        "example": "",
-        "type": "string"
-      },
-      "serial_number": {
-        "description": "Serial number of the device",
-        "example": "",
-        "type": "string"
-      },
-      "sensor_type": {
-        "description": "Measurement device type",
-        "example": "Raw accelerometer, count-based data",
-        "type": "string"
-      },
-      "channels": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/channel"
-        }
-      }
   },
- "required": ["manufacturer", "model"]
+  "title": "Light sensor",
+  "description": "Information about the light sensor",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "description": "MD5 hash generated from the `manufacturer+model` field.",
+      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+      "type": "string"
+    },
+    "manufacturer": {
+      "description": "Manufacturer of the sensor",
+      "example": "Hamamatsu Photonics Co., Ltd",
+      "type": "string"
+    },
+    "model": {
+      "description": "Model of the sensor",
+      "example": "C12666MA",
+      "type": "string"
+    },
+    "serial_number": {
+      "description": "Serial number of the device",
+      "example": "ABCD-1234",
+      "type": "string"
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/channel"
+      }
+    }
+  },
+ "required": ["uuid", "manufacturer", "model", "serial_number"]
 }
