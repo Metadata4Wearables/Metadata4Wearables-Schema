@@ -26,10 +26,12 @@
               "description": "Upper boundary (Hz)",
               "type": "numeric"
             }
-          }
-        },
-        required = ["filter_type", "filter_boundary"]
-      }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      },
+      "required" = ["filter_type", "filter_boundary"]
     },
     "channel": {
       "type": "object",
@@ -52,14 +54,17 @@
           "description": "Range of acquisition"
           "type": "object",
           "properties": {
-            "range_value": {
+            "range_value_min": {
+              "type": "number"
+            },
+            "range_value_max": {
               "type": "number"
             },
             "range_unit": {
               "type": "string"
             }
           },
-          "required": ["range_value", "range_unit"]
+          "required": ["range_value_min", "range_value_max", "range_unit"]
         },
         "resolution": {
           "type": "object",
@@ -103,7 +108,7 @@
     },
     "sensor_motion_model": {
       "description": "Model of the sensor",
-      "example": "",
+      "example": "BMI160",
       "type": "string"
     },
     "sensor_motion_serial_number": {
