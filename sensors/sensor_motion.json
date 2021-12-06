@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json",
+  "definitions": {
+    "filter": {
+      "description": "Description of the filters applied to the acquired data",
+      "type": "object",
+      "properties": {
+        "filter_type": {
+          "description": "Type of filter",
+          "enum": ["low-pass", "band-pass", "high-pass"]
+        },
+        "filter_order": {
+          "description": "Order of filter",
+          "type": "integer"
+        },
+        "filter_boundary": {
+          "description": "Frequency settings of the filter",
+          "type": "object",
+          "properties": {
+            "filter_boundary_lower": {
+              "description": "Lower boundary (Hz)",
+              "type": "numeric"
+            },
+            "filter_boundary_upper": {
+              "description": "Upper boundary (Hz)",
+              "type": "numeric"
+            }
+          },
+          "additionalProperties": false,
+          "minProperties": 1
+        }
+      },
+      "required" = ["filter_type", "filter_boundary"]
+    },
+    "channel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the channel",
+          "type": "string"
+        },
+        "description": {
+          "description": "Description of the channel",
+          "type": "string"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/filter"
+          }
+        },
+        "range": {
+          "description": "Range of acquisition"
+          "type": "object",
+          "properties": {
+            "range_value_min": {
+              "type": "number"
+            },
+            "range_value_max": {
+              "type": "number"
+            },
+            "range_unit": {
+              "type": "string"
+            }
+          },
+          "required": ["range_value_min", "range_value_max", "range_unit"]
+        },
+        "resolution": {
+          "type": "object",
+          "properties": {
+            "resolution_value": {
+              "type": "number"
+            },
+            "resolution_unit": {
+              "type": "string"
+            }
+          },
+          "required": ["resolution_value", "resolution_unit"]
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "range",
+        "resolution"
+      ]
+    }
+  },
+  "title": "Motion sensor",
+  "description": "Information about the motion sensor",
+  "type": "object",
+  "properties": {
+    "sensor_motion_uuid": {
+      "description": "MD5 hash generated from the `manufacturer+model` field.",
+      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+      "type": "string"
+    },
+    "sensor_motion_manufacturer": {
+      "description": "Manufacturer of the motion sensor",
+      "example": "",
+      "type": "string"
+    },
+    "sensor_motion_type": {
+      "description": "Type of the motion sensor",
+      "example": "accelerometer",
+      "type": "string"
+    },
+    "sensor_motion_model": {
+      "description": "Model of the sensor",
+      "example": "BMI160",
+      "type": "string"
+    },
+    "sensor_motion_serial_number": {
+      "description": "Serial number of the motion sensor",
+      "example": "ABCD-1234",
+      "type": "string"
+    },
+    "sensor_motion_channels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/channel"
+      }
+    }
+  },
+  "required": [
+    "sensor_motion_uuid",
+    "sensor_motion_manufacturer",
+    "sensor_motion_type",
+    "sensor_motion_model"
+  ]
+}
