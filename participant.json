@@ -4,12 +4,15 @@
   "definitions": {
     "phenotype": {
       "type": "object",
+      "title": "Phenotype",
       "properties": {
         "name": {
+          "title": "Name",
           "description": "Phenotype",
           "type": "string"
         },
         "value": {
+          "title": "Value",
           "description": "Value",
           "type": "string"
         }
@@ -25,6 +28,7 @@
     "type": "object",
     "properties": {
       "age": {
+        "title": "Age",
         "description": "Age of the participant",
         "example": "",
         "type": "string"
@@ -35,16 +39,19 @@
         "type": "string"
       },
       "internalid": {
+        "title": "Internal ID",
         "description": "Internal ID",
         "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
         "type": "string"
       },
       "sex": {
+        "title": "Sex",
         "description": "Sex",
         "example": "",
         "type": "string"
       },
       "phenotypes": {
+        "title": "Phenotypes",
         "type": "array",
         "items": {
           "$ref": "#/definitions/phenotype"
