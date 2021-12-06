@@ -92,16 +92,30 @@
               "type": "boolean"
             }
           },
-          "if": {
-            "properties": { "ongoing": { "const": true } }
-          },
-          "then": {
-            "properties": {
-              "stop_date_time": {
-                "description": "Stop date-time for the data collection",
-                "type": "string",
-                "format": "date-time"
-              }
+          "dependencies": {
+            "ongoing": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "ongoing": {
+                      "const": true
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "ongoing": {
+                      "const": false
+                    },
+                    "stop_date_time": {
+                      "description": "Stop date-time for the data collection",
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": ["stop_date_time"]
+                }
+              ]
             }
           }
         }
