@@ -20,10 +20,10 @@
         "institution": {
           "type": "object",
           "properties": {
-            "name":           { "type": "string" },
+            "name": { "type": "string" },
             "street_address": { "type": "string" },
-            "city":           { "type": "string" },
-            "country":        { "type": "string" }
+            "city": { "type": "string" },
+            "country": { "type": "string" }
           },
           "required": ["name", "country"]
         }
@@ -68,7 +68,7 @@
       },
       "required": ["wear_time"]
     },
-    "contributors": { "$ref": "#/definitions/person"},
+    "contributors": { "$ref": "#/definitions/person" },
     "data_set": {
       "description": "Information about the data collection effort.",
       "type": "object",
@@ -104,5 +104,5 @@
       "required": ["period", "contributors"]
     }
   },
-  "required": [ "data_owner", "studyid", "uuid", "clinical_trial", "sample", "description", "keywords", "instructions", "data_collection"]
+  "required": ["uuid", "description", "instructions"]
 }
