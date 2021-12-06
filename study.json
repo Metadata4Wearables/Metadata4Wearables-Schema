@@ -36,7 +36,7 @@
 					"description": "Inclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
-					"minItems": 0,
+					"minItems": 1,
 					"items": {
 						"type": "string"
 					}
