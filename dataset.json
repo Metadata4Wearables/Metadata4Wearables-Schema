@@ -101,8 +101,8 @@
           }
         }
       },
-      "required": ["period", "contributors"]
+      "required": ["period"]
     }
   },
-  "required": ["uuid", "description", "instructions"]
+  "required": ["uuid", "description", "instructions", "contributors"]
 }
