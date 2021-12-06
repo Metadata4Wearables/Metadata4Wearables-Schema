@@ -68,7 +68,12 @@
       },
       "required": ["wear_time"]
     },
-    "contributors": { "$ref": "#/definitions/person" },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/person"
+      }
+    },
     "data_set": {
       "description": "Information about the data collection effort.",
       "type": "object",
