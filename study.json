@@ -2,8 +2,7 @@
 	"$schema": "https://json-schema.org/draft-07/schema",
 	"$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/study.json",
 	"$defs": {
-		"sample_group": {
-			"description": "Description of a sample group enrolled or examined in the study",
+		"group": {
 			"type": "object",
 			"properties": {
 				"name": {
@@ -21,13 +20,13 @@
 					"example": 0,
 					"type": "integer"
 				},
-				"group_size": {
+				"size": {
 					"description": "Group size",
 					"example": 6,
 					"type": "integer",
 					"minimum": 1
 				},
-				"inclusion_criteria": {
+				"inclusion": {
 					"description": "Inclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
@@ -36,7 +35,7 @@
 						"type": "string"
 					}
 				},
-				"exclusion_criteria": {
+				"exclusion": {
 					"description": "Exclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
@@ -45,7 +44,8 @@
 						"type": "string"
 					}
 				}
-			}
+			},
+			"required": ["name", "description", "label", "size", "inclusion"]
 		}
 	},
 	"title": "Study-level metadata",
@@ -87,12 +87,12 @@
 			"example": "Healthy control participants and ACHM patients",
 			"type": "string"
 		},
-		"sample_groups": {
+		"groups": {
 			"description": "Description of the sample group(s) enrolled or examined in the study",
 			"type": "array",
-			"minItems": 2,
+			"minItems": 1,
 			"items": {
-				"$ref": "#/$defs/sample_group"
+				"$ref": "#/$defs/group"
 			}
 		},
 		"intervention": {
@@ -114,7 +114,7 @@
 			"type": "array",
 			"minItems": 1,
 			"items": {
-				"$ref": "person.json#/definitions/person"
+				"$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/person.json"
 			}
 		}
 	},
