@@ -118,20 +118,31 @@
 			}
 		}
 	},
-	"if": {
-		"properties": {
-			"clinical_trial": {
-				"const": true
-			}
-		}
-	},
-	"then": {
-		"properties": {
-			"clinical_trial_id": {
-				"description": "Clinical trial identifier as well as registry",
-				"example": "",
-				"type": "string"
-			}
+	"dependencies": {
+    "clinical_trial": {
+      "oneOf": [
+        {
+          "properties": {
+            "clinical_trial": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "clinical_trial": {
+              "const": true
+            },
+            "clinical_trial_id": {
+              "title": "Clinical Trial ID",
+              "description": "Clinical trial identifier as well as registry",
+              "example": "",
+              "type": "string"
+            }
+          },
+          "required": ["clinical_trial_id"]
+        }
+      ]
 		}
 	},
 	"required": ["name", "uuid", "clinical_trial", "ethics_information", "sample", "description", "keywords"]
