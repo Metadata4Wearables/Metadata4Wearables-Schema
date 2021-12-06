@@ -33,11 +33,6 @@
         "example": "",
         "type": "string"
       },
-      "uuid": {
-        "description": "MD5 hash generated from the `name` field.",
-        "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
-        "type": "string"
-      },
       "internalid": {
         "title": "Internal ID",
         "description": "Internal ID",
@@ -58,5 +53,5 @@
         }
       }
   },
- "required": ["age", "uuid", "sex"]
+ "required": ["age", "sex"]
 }
