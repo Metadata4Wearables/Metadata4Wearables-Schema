@@ -6,26 +6,31 @@
   "type": "object",
   "properties": {
     "event_id": {
+      "title": "Event ID",
       "description": "The unique identifier for an event",
       "type": "number",
       "minimum": 0,
       "multipleOf" : 1
     },
     "event_name": {
+      "title": "Event name",
       "description": "Name of the event",
       "type": "string"
     },
     "start_date_time": {
+      "title": "Start datetime",
       "description": "Start date-time for an event",
       "type": "string",
       "format": "date-time"
     },
     "stop_date_time": {
+      "title": "Stop datetime",
       "description": "Stop date-time for an event",
       "type": "string",
       "format": "date-time"
     },
     "comment": {
+      "title": "Comment",
       "description": "Comment about an event",
       "type": "string"
     }
