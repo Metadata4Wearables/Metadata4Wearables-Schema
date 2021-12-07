@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/event.json",
   "title": "Event-level metadata (within dataset)",
   "description": "Event definition in the context of actigraphy or light data set",

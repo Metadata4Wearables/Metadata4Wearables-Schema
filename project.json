@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/project.json",
   "title": "Project-level metadata",
   "description": "Project-level metadata is metadata that describes the project. A project could be a wider organisational unit of studies. For example, there may be different substudies within a project.",

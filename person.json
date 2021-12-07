@@ -1,5 +1,5 @@
 {
-	"$schema": "https://json-schema.org/draft-07/schema",
+	"$schema": "http://json-schema.org/draft-07/schema",
 	"$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/person.json",
 	"title": "Base schema for contributors",
 	"description": "Role and contact information about a person.",
