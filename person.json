@@ -19,7 +19,8 @@
 				"description": "Role ID",
 				"type": "string",
 				"pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
-			}
+			},
+      "minItems": 1
 		},
 		"email": {
       "title": "Email",
