@@ -7,39 +7,49 @@
 	"type": "object",
 	"properties": {
 		"name": {
+      "title": "Name",
 			"type": "string"
 		},
 		"role": {
+      "title": "Role",
 			"description": "Role ID(s) according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
 			"type": "array",
 			"items": {
+        "title": "Role ID",
 				"description": "Role ID",
 				"type": "string",
 				"pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
 			}
 		},
 		"email": {
+      "title": "Email",
 			"type": "string",
 			"format": "idn-email"
 		},
 		"orcid": {
+      "title": "ORCID identifier",
 			"description": "ORCID identifier",
 			"type": "string",
 			"pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9|X]$"
 		},
 		"institution": {
+      "title": "Institution",
 			"type": "object",
 			"properties": {
 				"name": {
+          "title": "Name",
 					"type": "string"
 				},
 				"street_address": {
+          "title": "Street address",
 					"type": "string"
 				},
 				"city": {
+          "title": "City",
 					"type": "string"
 				},
 				"country": {
+          "title": "Country",
 					"type": "string"
 				}
 			},
