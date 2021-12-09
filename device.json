@@ -6,42 +6,50 @@
   "type": "object",
   "properties": {
     "uuid": {
+      "title": "UUID",
       "description": "MD5 hash generated from the `name` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
     "manufacturer": {
+      "title": "Manufacturer",
       "description": "Manufacturer of the device",
       "example": "",
       "type": "string"
     },
     "model": {
+      "title": "Model",
       "description": "Model of the device",
       "example": "",
       "type": "string"
     },
     "serial_number": {
+      "title": "Serial number",
       "description": "Serial number of the device",
       "example": "",
       "type": "string"
     },
     "device_sensors": {
+      "title": "Device sensors",
       "description": "Sensors included in the device",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "device_sensor_internal_id": {
+            "title": "Internal ID",
             "description": "Internal ID of the sensor",
             "example": "1",
             "type": "number"
           },
           "device_sensor_name": {
+            "title": "Name",
             "description": "Name of the sensor",
             "example": "Motion sensor",
             "type": "string"
           },
           "device_sensor_category": {
+            "title": "Category",
             "description": "Category of data acquired by the sensor",
             "enum": ["motion", "light", "temperature"]
           }
