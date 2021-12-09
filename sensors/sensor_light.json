@@ -3,26 +3,33 @@
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json",
   "definitions": {
     "channel": {
+      "title": "Channel",
       "type": "object",
       "properties": {
         "name": {
+          "title": "Name",
           "description": "Name of the channel",
           "type": "string"
         },
         "description": {
+          "title": "Description",
           "description": "Description of the channel",
           "type": "string"
         },
         "spectral_sensitivity": {
+          "title": "Spectral sensitivity",
           "type": "object",
           "properties": {
             "spectral_sensitivity_calibration_status": {
+              "title": "Calibration status",
               "type": "boolean"
             },
             "spectral_sensitivity_calibration_type": {
+              "title": "Calibration type",
               "type": "string"
             },
             "spectral_sensitivity_calibration_details": {
+              "title": "Calibration details",
               "type": "string"
             }
           },
@@ -30,14 +37,18 @@
         },
         "linearity": {
           "type": "object",
+          "title": "Linearity",
           "properties": {
             "linearity_calibration_status": {
+              "title": "Calibration status",
               "type": "boolean"
             },
             "linearity_calibration_type": {
+              "title": "Calibration type",
               "type": "string"
             },
             "linearity_calibration_details": {
+              "title": "Calibration details",
               "type": "string"
             }
           },
@@ -45,14 +56,18 @@
         },
         "directional_response": {
           "type": "object",
+          "title": "Directional response",
           "properties": {
             "directional_response_calibration_status": {
+              "title": "Calibration status",
               "type": "boolean"
             },
             "directional_response_calibration_type": {
+              "title": "Calibration type",
               "type": "string"
             },
             "directional_response_calibration_details": {
+              "title": "Calibration details",
               "type": "string"
             }
           },
@@ -72,31 +87,37 @@
   "type": "object",
   "properties": {
     "sensor_light_uuid": {
+      "title": "UUID",
       "description": "MD5 hash generated from the `manufacturer+model` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
     "sensor_light_manufacturer": {
+      "title": "Manufacturer",
       "description": "Manufacturer of the light sensor",
       "example": "Hamamatsu Photonics Co., Ltd",
       "type": "string"
     },
     "sensor_light_type": {
+      "title": "Type",
       "description": "Type of the light sensor",
       "example": "spectrophotometer",
       "type": "string"
     },
     "sensor_light_model": {
+      "title": "Model",
       "description": "Model of the light sensor",
       "example": "C12666MA",
       "type": "string"
     },
     "sensor_light_serial_number": {
+      "title": "Serial number",
       "description": "Serial number of the light sensor",
       "example": "ABCD-1234",
       "type": "string"
     },
     "sensor_light_channels": {
+      "title": "Light channels",
       "type": "array",
       "items": {
         "$ref": "#/definitions/channel"
