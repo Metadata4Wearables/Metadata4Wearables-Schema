@@ -41,7 +41,7 @@
     "contributors": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/person.json"
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
       }
     },
     "project_status": {
