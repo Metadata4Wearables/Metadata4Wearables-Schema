@@ -20,18 +20,18 @@
           "properties": {
             "filter_boundary_lower": {
               "description": "Lower boundary (Hz)",
-              "type": "numeric"
+              "type": "number"
             },
             "filter_boundary_upper": {
               "description": "Upper boundary (Hz)",
-              "type": "numeric"
+              "type": "number"
             }
           },
           "additionalProperties": false,
           "minProperties": 1
         }
       },
-      "required" = ["filter_type", "filter_boundary"]
+      "required": ["filter_type", "filter_boundary"]
     },
     "channel": {
       "type": "object",
@@ -47,11 +47,11 @@
         "filters": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/filter"
+            "$ref": "#/definitions/filter"
           }
         },
         "range": {
-          "description": "Range of acquisition"
+          "description": "Range of acquisition",
           "type": "object",
           "properties": {
             "range_value_min": {
