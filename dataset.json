@@ -1,40 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/dataset.json",
-  "definitions": {
-    "person": {
-      "title": "Person",
-      "type": "object",
-      "properties": {
-        "name": { "title": "Name", "type": "string" },
-        "role": {
-          "title": "Role",
-          "description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
-          "type": "string",
-          "pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
-        },
-        "email": { "title": "Email", "type": "string", "format": "idn-email" },
-        "orcid": {
-          "title": "ORCID identifier",
-          "description": "ORCID identifier",
-          "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
-        },
-        "institution": {
-          "title": "Institution",
-          "type": "object",
-          "properties": {
-            "name": { "title": "Name", "type": "string" },
-            "street_address": { "title": "Street address", "type": "string" },
-            "city": { "title": "City", "type": "string" },
-            "country": { "title": "Country", "type": "string" }
-          },
-          "required": ["name", "country"]
-        }
-      },
-      "required": ["name", "role", "institution"]
-    }
-  },
   "title": "Dataset-level metadata",
   "description": "Dataset-level metadata is metadata concerning one specific, per-participant dataset",
   "type": "object",
@@ -82,7 +48,7 @@
       "title": "Contributors",
       "type": "array",
       "items": {
-        "$ref": "#/definitions/person"
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/person.json"
       }
     },
     "data_set": {
