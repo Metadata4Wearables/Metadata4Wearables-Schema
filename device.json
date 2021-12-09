@@ -5,22 +5,22 @@
   "description": "Information about the data acquisition device",
   "type": "object",
   "properties": {
-    "device_uuid": {
+    "uuid": {
       "description": "MD5 hash generated from the `name` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
-    "device_manufacturer": {
+    "manufacturer": {
       "description": "Manufacturer of the device",
       "example": "",
       "type": "string"
     },
-    "device_model": {
+    "model": {
       "description": "Model of the device",
       "example": "",
       "type": "string"
     },
-    "device_serial_number": {
+    "serial_number": {
       "description": "Serial number of the device",
       "example": "",
       "type": "string"
