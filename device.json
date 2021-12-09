@@ -67,7 +67,7 @@
             "then": {
               "properties": {
                 "sensor": {
-                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json"
+                  "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_motion.json"
                 }
               },
               "required": ["device_sensor"]
@@ -80,7 +80,7 @@
             "then": {
               "properties": {
                 "sensor": {
-                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json"
+                  "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_light.json"
                 }
               },
               "required": ["device_sensor"]
