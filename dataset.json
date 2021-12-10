@@ -70,7 +70,8 @@
             "ongoing": {
               "title": "Ongoing?",
               "description": "Indicate if the data collection is still ongoing",
-              "type": "boolean"
+              "type": "boolean",
+              "default": true
             }
           },
           "dependencies": {
