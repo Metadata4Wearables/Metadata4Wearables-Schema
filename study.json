@@ -141,6 +141,13 @@
 			"items": {
 				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/dataset.json"
 			}
+		},
+		"participants": {
+			"title": "Participants",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/participant.json"
+			}
 		}
 	},
 	"dependencies": {
