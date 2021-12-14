@@ -148,6 +148,13 @@
 			"items": {
 				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/participant.json"
 			}
+		},
+		"devices": {
+			"title": "Devices",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/device.json"
+			}
 		}
 	},
 	"dependencies": {
