@@ -134,6 +134,13 @@
 			"items": {
 				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
 			}
+		},
+		"datasets": {
+			"title": "Datasets",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/dataset.json"
+			}
 		}
 	},
 	"dependencies": {
