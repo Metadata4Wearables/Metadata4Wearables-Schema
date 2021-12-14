@@ -51,6 +51,13 @@
         "items": {
           "$ref": "#/definitions/phenotype"
         }
+      },
+      "events": {
+        "title": "Events",
+        "type": "array",
+        "items": {
+          "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/event.json"
+        }
       }
   },
  "required": ["age", "sex"]
