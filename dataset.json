@@ -11,6 +11,16 @@
       "example": "ACHM2019_Actigraphy_P01",
       "type": "string"
     },
+    "device_internal_id": {
+      "title": "Internal ID of Device",
+      "description": "Unique identifier of the device in this dataset",
+      "type": "string"
+    },
+    "participant_internal_id": {
+      "title": "Internal ID of Participant",
+      "description": "Unique identifier of the participant in this dataset",
+      "type": "string"
+    },
     "uuid": {
       "title": "UUID",
       "description": "MD5 hash generated from the `name` field",
