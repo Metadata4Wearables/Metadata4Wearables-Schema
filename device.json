@@ -5,10 +5,9 @@
   "description": "Information about the data acquisition device",
   "type": "object",
   "properties": {
-    "uuid": {
-      "title": "UUID",
-      "description": "MD5 hash generated from the `name` field.",
-      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+    "internal_id": {
+      "title": "Internal ID",
+      "description": "Unique identifier for this device",
       "type": "string"
     },
     "manufacturer": {
@@ -92,5 +91,5 @@
       "uniqueItems": true
     }
   },
-  "required": ["uuid", "manufacturer", "model", "serial_number"]
+  "required": ["internal_id", "manufacturer", "model", "serial_number"]
 }
