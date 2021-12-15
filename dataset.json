@@ -61,6 +61,13 @@
         "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
       }
     },
+    "acquisitions": {
+      "title": "Acquisitions",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/acquisition.json"
+      }
+    },
     "data_set": {
       "title": "Dataset",
       "description": "Information about the data collection effort.",
