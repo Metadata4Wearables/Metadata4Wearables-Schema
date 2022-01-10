@@ -1,36 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/project.json",
-  "definitions": {
-    "person": {
-      "type": "object",
-      "properties": {
-        "name": { "type": "string" },
-        "role": {
-          "description": "Role ID according to the Contributor Role Ontology (https://www.ebi.ac.uk/ols/ontologies/cro)",
-          "type": "string",
-          "pattern": "^((CRO_[0-9]{7})|(CREDIT_[0-9]{8}))$"
-        },
-        "email": { "type": "string", "format": "idn-email" },
-        "orcid": {
-          "description": "ORCID identifier",
-          "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
-        },
-        "institution": {
-          "type": "object",
-          "properties": {
-            "name":           { "type": "string" },
-            "street_address": { "type": "string" },
-            "city":           { "type": "string" },
-            "country":        { "type": "string" }
-          },
-          "required": ["name", "country"]
-        }
-      },
-      "required": ["name", "role", "institution"]
-    }
-  },
   "title": "Project-level metadata",
   "description": "Project-level metadata is metadata that describes the project. A project could be a wider organisational unit of studies. For example, there may be different substudies within a project.",
   "type": "object",
@@ -71,7 +41,7 @@
     "contributors": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/person"
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
       }
     },
     "project_status": {

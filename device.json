@@ -1,49 +1,56 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/device.json",
   "title": "Acquisition device",
   "description": "Information about the data acquisition device",
   "type": "object",
   "properties": {
-    "device_uuid": {
-      "description": "MD5 hash generated from the `name` field.",
-      "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+    "internal_id": {
+      "title": "Internal ID",
+      "description": "Unique identifier for this device",
       "type": "string"
     },
-    "device_manufacturer": {
+    "manufacturer": {
+      "title": "Manufacturer",
       "description": "Manufacturer of the device",
       "example": "",
       "type": "string"
     },
-    "device_model": {
+    "model": {
+      "title": "Model",
       "description": "Model of the device",
       "example": "",
       "type": "string"
     },
-    "device_serial_number": {
+    "serial_number": {
+      "title": "Serial number",
       "description": "Serial number of the device",
       "example": "",
       "type": "string"
     },
     "device_sensors": {
+      "title": "Device sensors",
       "description": "Sensors included in the device",
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "device_sensor_internal_id": {
+            "title": "Internal ID",
             "description": "Internal ID of the sensor",
             "example": "1",
             "type": "number"
           },
           "device_sensor_name": {
+            "title": "Name",
             "description": "Name of the sensor",
             "example": "Motion sensor",
             "type": "string"
           },
           "device_sensor_category": {
+            "title": "Category",
             "description": "Category of data acquired by the sensor",
-            "enum": ["motion", "light", "temperature"]
+            "enum": ["motion", "light"]
           }
         },
         "required": [
@@ -51,51 +58,38 @@
           "device_sensor_name",
           "device_sensor_category"
         ],
-        "allOf": [
-          {
-            "if": {
-              "properties": { "device_sensor_category": { "const": "motion" } }
-            },
-            "then": {
-              "properties": {
-                "sensor": {
-                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json"
-                }
+        "dependencies": {
+          "device_sensor_category": {
+            "oneOf": [
+              {
+                "properties": {
+                  "device_sensor_category": {
+                    "enum": ["motion"]
+                  },
+                  "sensor": {
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/sensors/sensor_motion.json"
+                  }
+                },
+                "required": ["sensor"]
               },
-              "required": ["device_sensor"]
-            }
-          },
-          {
-            "if": {
-              "properties": { "device_sensor_category": { "const": "light" } }
-            },
-            "then": {
-              "properties": {
-                "sensor": {
-                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light.json"
-                }
-              },
-              "required": ["device_sensor"]
-            }
-          },
-          {
-            "if": {
-              "properties": { "device_sensor_category": { "const": "temperature" } }
-            },
-            "then": {
-              "properties": {
-                "sensor": {
-                  "$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_temperature.json"
-                }
-              },
-              "required": ["device_sensor"]
-            }
+              {
+                "properties": {
+                  "device_sensor_category": {
+                    "enum": ["light"]
+                  },
+                  "sensor": {
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/sensors/sensor_light.json"
+                  }
+                },
+                "required": ["sensor"]
+              }
+            ]
           }
-        ]
+        }
       },
       "minItems": 1,
       "uniqueItems": true
     }
   },
-  "required": ["uuid", "manufacturer", "model", "serial_number"]
+  "required": ["internal_id", "manufacturer", "model", "serial_number"]
 }

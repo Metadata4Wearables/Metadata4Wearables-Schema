@@ -1,15 +1,18 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/participant.json",
   "definitions": {
     "phenotype": {
       "type": "object",
+      "title": "Phenotype",
       "properties": {
         "name": {
+          "title": "Name",
           "description": "Phenotype",
           "type": "string"
         },
         "value": {
+          "title": "Value",
           "description": "Value",
           "type": "string"
         }
@@ -25,31 +28,36 @@
     "type": "object",
     "properties": {
       "age": {
+        "title": "Age",
         "description": "Age of the participant",
         "example": "",
         "type": "string"
       },
-      "uuid": {
-        "description": "MD5 hash generated from the `name` field.",
-        "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
-        "type": "string"
-      },
-      "internalid": {
-        "description": "Internal ID",
-        "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
+      "internal_id": {
+        "title": "Internal ID",
+        "description": "Unique identifier for this participant",
         "type": "string"
       },
       "sex": {
+        "title": "Sex",
         "description": "Sex",
         "example": "",
         "type": "string"
       },
       "phenotypes": {
+        "title": "Phenotypes",
         "type": "array",
         "items": {
           "$ref": "#/definitions/phenotype"
         }
+      },
+      "events": {
+        "title": "Events",
+        "type": "array",
+        "items": {
+          "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/event.json"
+        }
       }
   },
- "required": ["age", "uuid", "sex"]
+ "required": ["age", "internal_id", "sex"]
 }

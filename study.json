@@ -1,41 +1,48 @@
 {
-	"$schema": "https://json-schema.org/draft-07/schema",
+	"$schema": "http://json-schema.org/draft-07/schema",
 	"$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/study.json",
 	"$defs": {
 		"group": {
+      "title": "Group",
 			"type": "object",
 			"properties": {
 				"name": {
+					"title": "Group name",
 					"description": "Name of group.",
 					"example": "ACHM patients",
 					"type": "string"
 				},
 				"description": {
+					"title": "Group description",
 					"description": "Description of sample group",
 					"example": "",
 					"type": "string"
 				},
 				"label": {
+					"title": "Group label",
 					"description": "Label of sample group",
 					"example": 0,
 					"type": "integer"
 				},
 				"size": {
+					"title": "Group size",
 					"description": "Group size",
 					"example": 6,
 					"type": "integer",
 					"minimum": 1
 				},
 				"inclusion": {
+					"title": "Inclusion criteria",
 					"description": "Inclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
-					"minItems": 0,
+					"minItems": 1,
 					"items": {
 						"type": "string"
 					}
 				},
 				"exclusion": {
+					"title": "Exclusion criteria",
 					"description": "Exclusion criteria for sample group, given as an array of strings",
 					"example": "",
 					"type": "array",
@@ -53,41 +60,49 @@
 	"type": "object",
 	"properties": {
 		"name": {
+			"title": "Name",
 			"description": "Informative or internal study name",
 			"example": "ACHM2019",
 			"type": "string"
 		},
 		"uuid": {
+			"title": "UUID",
 			"description": "Unique MD5 hash generated from the `name` field",
 			"example": "01d429fd3c4cc02697eea7f3fe838c54",
 			"type": "string"
 		},
 		"prereg_doi": {
+			"title": "Pre-registration document DOI",
 			"description": "DOI (Digital Object Identifier) of pre-registration document describing data collection",
 			"example": "",
 			"type": "string"
 		},
 		"ethics_information": {
+			"title": "Ethics information",
 			"description": "Name of ethics committee and approval number",
 			"example": "",
 			"type": "string"
 		},
 		"clinical_trial": {
+			"title": "Clinical trial",
 			"description": "Is this a registered clinical trial?",
 			"example": false,
 			"type": "boolean"
 		},
 		"description": {
+			"title": "Description",
 			"description": "Short narrative description of the study",
 			"example": "",
 			"type": "string"
 		},
 		"sample": {
+			"title": "Sample",
 			"description": "Short description of the study sample.",
 			"example": "Healthy control participants and ACHM patients",
 			"type": "string"
 		},
 		"groups": {
+			"title": "Groups",
 			"description": "Description of the sample group(s) enrolled or examined in the study",
 			"type": "array",
 			"minItems": 1,
@@ -96,11 +111,13 @@
 			}
 		},
 		"intervention": {
+			"title": "Intervention",
 			"description": "Short description of the study intervention, if any",
 			"example": "",
 			"type": "string"
 		},
 		"keywords": {
+			"title": "Keywords",
 			"description": "Key words describing the study.",
 			"example": ["actigraphy", "congenital achromatopsia", "circadian"],
 			"type": "array",
@@ -110,28 +127,61 @@
 			}
 		},
 		"contributors": {
+			"title": "Contributors",
 			"description": "Study contributors",
 			"type": "array",
 			"minItems": 1,
 			"items": {
-				"$ref": "https://github.com/cdsig/CDSIG-Schema/blob/main/person.json"
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
+			}
+		},
+		"datasets": {
+			"title": "Datasets",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/dataset.json"
+			}
+		},
+		"participants": {
+			"title": "Participants",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/participant.json"
+			}
+		},
+		"devices": {
+			"title": "Devices",
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/device.json"
 			}
 		}
 	},
-	"if": {
-		"properties": {
-			"clinical_trial": {
-				"const": true
-			}
-		}
-	},
-	"then": {
-		"properties": {
-			"clinical_trial_id": {
-				"description": "Clinical trial identifier as well as registry",
-				"example": "",
-				"type": "string"
-			}
+	"dependencies": {
+    "clinical_trial": {
+      "oneOf": [
+        {
+          "properties": {
+            "clinical_trial": {
+              "const": false
+            }
+          }
+        },
+        {
+          "properties": {
+            "clinical_trial": {
+              "const": true
+            },
+            "clinical_trial_id": {
+              "title": "Clinical Trial ID",
+              "description": "Clinical trial identifier as well as registry",
+              "example": "",
+              "type": "string"
+            }
+          },
+          "required": ["clinical_trial_id"]
+        }
+      ]
 		}
 	},
 	"required": ["name", "uuid", "clinical_trial", "ethics_information", "sample", "description", "keywords"]

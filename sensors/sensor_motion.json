@@ -1,78 +1,95 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion.json",
   "definitions": {
     "filter": {
+      "title": "Filter",
       "description": "Description of the filters applied to the acquired data",
       "type": "object",
       "properties": {
         "filter_type": {
+          "title": "Type",
           "description": "Type of filter",
           "enum": ["low-pass", "band-pass", "high-pass"]
         },
         "filter_order": {
+          "title": "Order",
           "description": "Order of filter",
           "type": "integer"
         },
         "filter_boundary": {
+          "title": "Boundary",
           "description": "Frequency settings of the filter",
           "type": "object",
           "properties": {
             "filter_boundary_lower": {
+              "title": "Lower boundary",
               "description": "Lower boundary (Hz)",
-              "type": "numeric"
+              "type": "number"
             },
             "filter_boundary_upper": {
+              "title": "Upper boundary",
               "description": "Upper boundary (Hz)",
-              "type": "numeric"
+              "type": "number"
             }
           },
           "additionalProperties": false,
           "minProperties": 1
         }
       },
-      "required" = ["filter_type", "filter_boundary"]
+      "required": ["filter_type", "filter_boundary"]
     },
     "channel": {
+      "title": "Channel",
       "type": "object",
       "properties": {
         "name": {
+          "title": "Name",
           "description": "Name of the channel",
           "type": "string"
         },
         "description": {
+          "title": "Description",
           "description": "Description of the channel",
           "type": "string"
         },
         "filters": {
+          "title": "Filters",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/filter"
+            "$ref": "#/definitions/filter"
           }
         },
         "range": {
-          "description": "Range of acquisition"
+          "title": "Range",
+          "description": "Range of acquisition",
           "type": "object",
           "properties": {
             "range_value_min": {
+              "title": "Minimum",
               "type": "number"
             },
             "range_value_max": {
+              "title": "Maximum",
               "type": "number"
             },
             "range_unit": {
+              "title": "Unit",
               "type": "string"
             }
           },
           "required": ["range_value_min", "range_value_max", "range_unit"]
         },
         "resolution": {
+          "title": "Resolution",
           "type": "object",
           "properties": {
             "resolution_value": {
+              "title": "Value",
               "type": "number"
             },
             "resolution_unit": {
+              "title": "Unit",
               "type": "string"
             }
           },
@@ -92,31 +109,37 @@
   "type": "object",
   "properties": {
     "sensor_motion_uuid": {
+      "title": "UUID",
       "description": "MD5 hash generated from the `manufacturer+model` field.",
       "example": "9b4cef4132e84329bc38dda4b2fa3f5b",
       "type": "string"
     },
     "sensor_motion_manufacturer": {
+      "title": "Manufacturer",
       "description": "Manufacturer of the motion sensor",
       "example": "",
       "type": "string"
     },
     "sensor_motion_type": {
+      "title": "Type",
       "description": "Type of the motion sensor",
       "example": "accelerometer",
       "type": "string"
     },
     "sensor_motion_model": {
+      "title": "Model",
       "description": "Model of the sensor",
       "example": "BMI160",
       "type": "string"
     },
     "sensor_motion_serial_number": {
+      "title": "Serial number",
       "description": "Serial number of the motion sensor",
       "example": "ABCD-1234",
       "type": "string"
     },
     "sensor_motion_channels": {
+      "title": "Channels",
       "type": "array",
       "items": {
         "$ref": "#/definitions/channel"

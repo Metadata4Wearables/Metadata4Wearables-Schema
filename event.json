@@ -1,31 +1,36 @@
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/event.json",
   "title": "Event-level metadata (within dataset)",
   "description": "Event definition in the context of actigraphy or light data set",
   "type": "object",
   "properties": {
     "event_id": {
+      "title": "Event ID",
       "description": "The unique identifier for an event",
       "type": "number",
       "minimum": 0,
       "multipleOf" : 1
     },
     "event_name": {
+      "title": "Event name",
       "description": "Name of the event",
       "type": "string"
     },
     "start_date_time": {
+      "title": "Start datetime",
       "description": "Start date-time for an event",
       "type": "string",
       "format": "date-time"
     },
     "stop_date_time": {
+      "title": "Stop datetime",
       "description": "Stop date-time for an event",
       "type": "string",
       "format": "date-time"
     },
     "comment": {
+      "title": "Comment",
       "description": "Comment about an event",
       "type": "string"
     }
