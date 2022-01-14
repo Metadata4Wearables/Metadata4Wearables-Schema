@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_motion_acq.json",
+  "definitions": {
+    "calibration": {
+      "title": "Calibration",
+      "description": "Calibration factors",
+      "type": "object",
+      "properties": {
+        "calibration_channel": {
+          "title": "Sensor channel",
+          "description": "Sensor channel associated with the calibration",
+          "example": "x-axis",
+          "type": "string"
+        },
+        "calibration_applied": {
+          "description": "Calibration already applied to data",
+          "example": false,
+          "type": "boolean"
+        },
+        "calibration_offset": {
+          "title": "Calibration offset"
+          "example": -0.01,
+          "type": "number"
+        },
+        "calibration_gain": {
+          "title": "Calibration gain"
+          "example": 1.023,
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": ["calibration_channel", "calibration_applied", "calibration_offset", "calibration_gain"]
+    }
+  },
+  "title": "Motion sensor acquisition settings",
+  "description": "Information about acquisition settings of the motion sensor",
+  "type": "object",
+  "properties": {
+    "sensor_motion_mode": {
+      "title": "Acquisition mode",
+      "description": "Acquisition mode. Mostly relevant for count-based devices",
+      "example": "For example, one of [PIM, TAT, ZCM, RAW]",
+      "type": "string"
+    },
+    "sensor_motion_sampling": {
+      "title": "Sampling period",
+      "description": "Sampling period of the motion sensor",
+      "type": "object",
+      "properties": {
+        "sampling_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "sampling_unit": {
+          "title": "Unit",
+          "example": "s or Hz"
+          "type": "string"
+        }
+      },
+      "required": ["sampling_value", "sampling_unit"]
+    },
+    "sensor_motion_storing": {
+      "title": "Storing period",
+      "description": "In-memory storing period of the acquired data",
+      "type": "object",
+      "properties": {
+        "storing_value": {
+          "title": "Value",
+          "type": "number",
+          "minimum": 0
+        },
+        "storing_unit": {
+          "title": "Unit",
+          "example": "s or Hz"
+          "type": "string"
+        }
+      },
+      "required": ["storing_value", "storing_unit"]
+    },
+    "sensor_motion_range": {
+      "title": "Acceleration range",
+      "description": "Range of accelerations acquired by the device",
+      "type": "object",
+      "properties": {
+        "range_min_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "range_max_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "range_unit": {
+          "title": "Unit",
+          "example": "g"
+          "type": "string"
+        }
+      },
+      "required": ["storing_value", "storing_unit"]
+    },
+    "sensor_motion_calibration": {
+      "title": "Motion sensor calibration",
+      "description": "Calibration factors for the acquired data",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/calibration"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "sensor_motion_mode",
+    "sensor_motion_sampling",
+    "sensor_motion_range",
+
+  ]
+}
