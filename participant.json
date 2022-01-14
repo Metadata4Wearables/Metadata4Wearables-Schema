@@ -45,6 +45,19 @@
       "example": "",
       "type": "string"
     },
+    "handedness": {
+      "title": "Handedness",
+      "description": "Handedness. Available values: Left, Right, Ambidexter or Not recorded",
+      "example": "Left",
+      "enum": ["Left","Right","Ambidexter","Not recorded"]
+    },
+    "timezone": {
+      "title": "Time zone (UTC offset)",
+      "description": "UTC offset of the participant's time zone.",
+      "example": "-05:00",
+      "type": "string",
+      "pattern": "^[+-]([01][0-9]|2[0-4])(:[0-5][0-9])$"
+    },
     "phenotypes": {
       "title": "Phenotypes",
       "type": "array",
