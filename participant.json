@@ -22,42 +22,43 @@
         "value"
       ]
     }
-    },
-    "title": "Participant-level metadata",
-    "description": "Information about the participant",
-    "type": "object",
-    "properties": {
-      "age": {
-        "title": "Age",
-        "description": "Age of the participant",
-        "example": "",
-        "type": "string"
-      },
-      "internal_id": {
-        "title": "Internal ID",
-        "description": "Unique identifier for this participant",
-        "type": "string"
-      },
-      "sex": {
-        "title": "Sex",
-        "description": "Sex",
-        "example": "",
-        "type": "string"
-      },
-      "phenotypes": {
-        "title": "Phenotypes",
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/phenotype"
-        }
-      },
-      "events": {
-        "title": "Events",
-        "type": "array",
-        "items": {
-          "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/event.json"
-        }
-      }
   },
- "required": ["age", "internal_id", "sex"]
+  "title": "Participant-level metadata",
+  "description": "Information about the participant",
+  "type": "object",
+  "properties": {
+    "internal_id": {
+      "title": "Internal ID",
+      "description": "Unique identifier for this participant",
+      "type": "string"
+    },
+    "age": {
+      "title": "Age",
+      "description": "Age of the participant",
+      "example": "",
+      "type": "integer",
+      "minimum": 0
+    },
+    "sex": {
+      "title": "Sex",
+      "description": "Sex",
+      "example": "",
+      "type": "string"
+    },
+    "phenotypes": {
+      "title": "Phenotypes",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/phenotype"
+      }
+    },
+    "events": {
+      "title": "Events",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/event.json"
+      }
+    }
+  },
+  "required": ["internal_id", "age", "sex"]
 }
