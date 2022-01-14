@@ -28,6 +28,18 @@
       "example": "",
       "type": "string"
     },
+    "harware_version": {
+      "title": "Hardware version",
+      "description": "Version number of the hardware",
+      "example": "",
+      "type": "string"
+    },
+    "memory_size": {
+      "title": "Memory size",
+      "description": "Size of the internal memory",
+      "example": "512MB",
+      "type": "string"
+    },
     "device_sensors": {
       "title": "Device sensors",
       "description": "Sensors included in the device",
