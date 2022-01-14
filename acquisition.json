@@ -26,21 +26,72 @@
           "example": "z-axis pointing out of wrist",
           "type": "string"
         },
-      }
+      },
+      "required": [ "location", "orientation"]
     },
     "sampling_rate": {
       "description": "Sampling rate",
       "type": "number"
     },
-    "sampling_epoch": {
-      "description": "Sampling epoch",
-      "type": "number",
-      "format": "date-time"
+    "device_sensors": {
+      "title": "",
+      "description": "Sensors included in the device",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "device_sensor_internal_id": {
+            "title": "Internal ID",
+            "description": "Internal ID of the sensor",
+            "example": "1",
+            "type": "number"
+          },
+          "device_sensor_category": {
+            "title": "Category",
+            "description": "Category of data acquired by the sensor",
+            "enum": ["motion", "light"]
+          }
+        },
+        "required": [
+          "device_sensor_internal_id",
+          "device_sensor_category"
+        ],
+        "dependencies": {
+          "device_sensor_category": {
+            "oneOf": [
+              {
+                "properties": {
+                  "device_sensor_category": {
+                    "enum": ["motion"]
+                  },
+                  "sensor": {
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_motion_acq.json"
+                  }
+                },
+                "required": ["sensor"]
+              },
+              {
+                "properties": {
+                  "device_sensor_category": {
+                    "enum": ["light"]
+                  },
+                  "sensor": {
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_light_acq.json"
+                  }
+                },
+                "required": ["sensor"]
+              }
+            ]
+          }
+        }
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "comment": {
       "description": "Comment about an acquisition",
       "type": "string"
     }
   },
-  "required": [ "sampling_rate", "sampling_epoch"]
+  "required": [ "device_internal_id", "device_position"]
 }
