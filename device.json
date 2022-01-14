@@ -79,7 +79,7 @@
                     "enum": ["motion"]
                   },
                   "sensor": {
-                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/sensors/sensor_motion.json"
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_motion.json"
                   }
                 },
                 "required": ["sensor"]
@@ -90,7 +90,7 @@
                     "enum": ["light"]
                   },
                   "sensor": {
-                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/sensors/sensor_light.json"
+                    "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/sensors/sensor_light.json"
                   }
                 },
                 "required": ["sensor"]
