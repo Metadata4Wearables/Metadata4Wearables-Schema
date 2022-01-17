@@ -19,12 +19,12 @@
           "type": "boolean"
         },
         "calibration_offset": {
-          "title": "Calibration offset"
+          "title": "Calibration offset",
           "example": -0.01,
           "type": "number"
         },
         "calibration_gain": {
-          "title": "Calibration gain"
+          "title": "Calibration gain",
           "example": 1.023,
           "type": "number",
           "minimum": 0
@@ -55,7 +55,7 @@
         },
         "sampling_unit": {
           "title": "Unit",
-          "example": "s or Hz"
+          "example": "s or Hz",
           "type": "string"
         }
       },
@@ -73,7 +73,7 @@
         },
         "storing_unit": {
           "title": "Unit",
-          "example": "s or Hz"
+          "example": "s or Hz",
           "type": "string"
         }
       },
@@ -94,7 +94,7 @@
         },
         "range_unit": {
           "title": "Unit",
-          "example": "g"
+          "example": "g",
           "type": "string"
         }
       },
