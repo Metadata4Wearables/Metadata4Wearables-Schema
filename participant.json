@@ -69,7 +69,7 @@
       "title": "Events",
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/event.json"
+        "$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/event.json"
       }
     }
   },

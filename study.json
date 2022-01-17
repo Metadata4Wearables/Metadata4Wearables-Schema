@@ -132,28 +132,28 @@
 			"type": "array",
 			"minItems": 1,
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/person.json"
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/person.json"
 			}
 		},
 		"datasets": {
 			"title": "Datasets",
 			"type": "array",
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/dataset.json"
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/dataset.json"
 			}
 		},
 		"participants": {
 			"title": "Participants",
 			"type": "array",
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/participant.json"
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/participant.json"
 			}
 		},
 		"devices": {
 			"title": "Devices",
 			"type": "array",
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/freerange-updates/device.json"
+				"$ref": "https://raw.githubusercontent.com/cdsig/CDSIG-Schema/main/device.json"
 			}
 		}
 	},
