@@ -15,7 +15,7 @@
       "type": "object",
       "properties": {
         "location": {
-          "title": "Location of the device"
+          "title": "Location of the device",
           "description": "Anatomical location of the acquisition device",
           "example": "Wrist of the non-dominant hand",
           "type": "string"
