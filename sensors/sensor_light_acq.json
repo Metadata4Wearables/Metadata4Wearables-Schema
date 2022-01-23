@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/cdsig/CDSIG-Schema/blob/main/sensor_light_acq.json",
+  "definitions": {
+    "calibration": {
+      "title": "Calibration",
+      "description": "Calibration factors",
+      "type": "object",
+      "properties": {
+        "calibration_channel": {
+          "title": "Sensor channel",
+          "description": "Sensor channel associated with the calibration",
+          "example": "R channel",
+          "type": "string"
+        },
+        "calibration_applied": {
+          "description": "Calibration already applied to data",
+          "example": false,
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["calibration_channel", "calibration_applied"]
+    }
+  },
+  "title": "Light sensor acquisition settings",
+  "description": "Information about acquisition settings of the light sensor",
+  "type": "object",
+  "properties": {
+    "sensor_motion_sampling": {
+      "title": "Sampling period",
+      "description": "Sampling period of the light sensor",
+      "type": "object",
+      "properties": {
+        "sampling_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "sampling_unit": {
+          "title": "Unit",
+          "example": "s or Hz",
+          "type": "string"
+        }
+      },
+      "required": ["sampling_value", "sampling_unit"]
+    },
+    "sensor_light_range": {
+      "title": "Light intensity range",
+      "description": "Range of light intensities acquired by the device",
+      "type": "object",
+      "properties": {
+        "range_min_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "range_max_value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "range_unit": {
+          "title": "Unit",
+          "example": "lux",
+          "type": "string"
+        },
+        "range_source": {
+          "title": "Source",
+          "example": "Manufacturer-provided",
+          "type": "string"
+        }
+      },
+    },
+    "sensor_motion_calibration": {
+      "title": "Motion sensor calibration",
+      "description": "Calibration factors for the acquired data",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/calibration"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "sensor_light_sampling",
+    "sensor_light_range",
+
+  ]
+}
