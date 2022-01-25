@@ -81,7 +81,7 @@
     },
     "sensor_motion_range": {
       "title": "Acceleration range",
-      "description": "Range of accelerations acquired by the device",
+      "description": "Range of accelerations configured in the device for specific acquisition",
       "type": "object",
       "properties": {
         "range_min_value": {
