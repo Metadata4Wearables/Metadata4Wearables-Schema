@@ -29,10 +29,6 @@
       },
       "required": [ "location", "orientation"]
     },
-    "sampling_rate": {
-      "description": "Sampling rate",
-      "type": "number"
-    },
     "device_sensors": {
       "title": "",
       "description": "Sensors included in the device",
