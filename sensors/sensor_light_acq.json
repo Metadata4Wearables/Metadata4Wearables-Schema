@@ -23,6 +23,30 @@
           "example": "param[0]*exp(-t/param[1]) + param[2]",
           "type": "string",
           "pattern": "(?:param\\[[0-9]+\\])+"
+        },
+        "calibration_factors": {
+          "description": "Calibration factors used in the generic formula",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "calibration_factor_index": {
+                "title": "Index of the calibration factor",
+                "description": "Index associated to a calibration factor",
+                "example": 1,
+                "type": "integer",
+                "minimum": 0
+              },
+              "calibration_factor_value": {
+                "title": "Value of the calibration factor",
+                "description": "Value associated to a calibration factor",
+                "example": -3.14159,
+                "type": "number"
+              }
+            }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       },
       "additionalProperties": false,
@@ -77,7 +101,7 @@
     },
     "sensor_light_calibration": {
       "title": "Light sensor calibration",
-      "description": "Calibration factors for the acquired data",
+      "description": "Calibration for the acquired data",
       "type": "array",
       "items": {
         "$ref": "#/definitions/calibration"
