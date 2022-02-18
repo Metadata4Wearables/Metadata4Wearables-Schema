@@ -40,9 +40,14 @@
   "properties": {
     "sensor_motion_mode": {
       "title": "Acquisition mode",
-      "description": "Acquisition mode. Mostly relevant for count-based devices",
-      "example": "For example, one of [PIM, TAT, ZCM, RAW]",
-      "type": "string"
+      "description": "Acquisition mode(s). Mostly relevant for count-based devices",
+      "example": "For example, at least one of [PIM, TAT, ZCM, RAW]",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "sensor_motion_sampling": {
       "title": "Sampling period",
