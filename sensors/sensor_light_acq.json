@@ -27,7 +27,7 @@
   "description": "Information about acquisition settings of the light sensor",
   "type": "object",
   "properties": {
-    "sensor_motion_sampling": {
+    "sensor_light_sampling": {
       "title": "Sampling period",
       "description": "Sampling period of the light sensor",
       "type": "object",
@@ -69,8 +69,8 @@
         }
       },
     },
-    "sensor_motion_calibration": {
-      "title": "Motion sensor calibration",
+    "sensor_light_calibration": {
+      "title": "Light sensor calibration",
       "description": "Calibration factors for the acquired data",
       "type": "array",
       "items": {
