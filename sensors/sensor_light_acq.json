@@ -4,7 +4,7 @@
   "definitions": {
     "calibration": {
       "title": "Calibration",
-      "description": "Calibration factors",
+      "description": "Information about sensor calibration",
       "type": "object",
       "properties": {
         "calibration_channel": {
@@ -17,6 +17,12 @@
           "description": "Calibration already applied to data",
           "example": false,
           "type": "boolean"
+        },
+        "calibration_formula": {
+          "description": "Generic calibration formula",
+          "example": "param[0]*exp(-t/param[1]) + param[2]",
+          "type": "string",
+          "pattern": "(?:param\\[[0-9]+\\])+"
         }
       },
       "additionalProperties": false,
