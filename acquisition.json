@@ -25,7 +25,7 @@
           "description": "Orientation of the acquisition device",
           "example": "z-axis pointing out of wrist",
           "type": "string"
-        },
+        }
       },
       "required": [ "location", "orientation"]
     },
